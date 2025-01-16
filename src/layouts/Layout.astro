@@ -1,50 +1,45 @@
 ---
+// Layout.astro
+import NavBar from '../components/navbar.astro';
+
 interface Props {
-	title: string;
+  title: string;
+  description: string;
+  gradientColor?: string;
 }
 
-const { title } = Astro.props;
+const { title, description, gradientColor } = Astro.props;
 ---
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content={description}>
+    <title>{title}</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header>
+      <NavBar />
+    </header>
+
+    <!-- Gradient Section for all pages -->
+    <section class="gradient-section" style={gradientColor ? `background: ${gradientColor};` : 'background: linear-gradient(45deg, #FF6347, #4B0082);'}>
+      <div class="gradient-content">
+        <h2>{title}</h2>
+        <p>{description}</p>
+      </div>
+    </section>
+
+    <!-- Main content injected here -->
+    <main>
+      <slot />
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Brian Cash. All rights reserved.</p>
+    </footer>
+  </body>
 </html>
-<style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
-</style>
