@@ -1,33 +1,40 @@
 ---
 // Layout.astro
-import NavBar from '../components/navbar.astro';
+import NavBar from "../components/navbar.astro";
 
 interface Props {
   title: string;
   description: string;
   gradientColor?: string;
+  pageClass?: string; // New prop to pass page-specific class
 }
 
-const { title, description, gradientColor } = Astro.props;
+const { title, description, gradientColor, pageClass } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content={description}>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
     <title>{title}</title>
     <link rel="stylesheet" href="/styles.css" />
   </head>
-  <body>
+  <body class={pageClass || ""}>
+    <!-- Apply the page-specific class here -->
     <header>
       <NavBar />
     </header>
 
-    <!-- Gradient Section for all pages -->
-    <section class="gradient-section" style={gradientColor ? `background: ${gradientColor};` : 'background: linear-gradient(45deg, #FF6347, #4B0082);'}>
-      <div class="gradient-content">
+    <!-- Hero Section -->
+    <section
+      class="hero"
+      style={gradientColor
+        ? `background: ${gradientColor};`
+        : "background: linear-gradient(45deg, #FF6347, #4B0082);"}
+    >
+      <div class="hero-content">
         <h2>{title}</h2>
         <p>{description}</p>
       </div>
@@ -38,6 +45,7 @@ const { title, description, gradientColor } = Astro.props;
       <slot />
     </main>
 
+    <!-- Footer Section -->
     <footer>
       <p>&copy; 2024 Brian Cash. All rights reserved.</p>
     </footer>

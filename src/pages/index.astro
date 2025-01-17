@@ -1,165 +1,112 @@
 ---
-import NavBar from "../components/navbar.astro";
+// index.astro
+import Layout from "../layouts/Layout.astro";
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Portfolio website" />
-    <title>Brian Cash - UCD Final Project</title>
-    <link rel="stylesheet" href="/styles.css" />
-    <style>
-      /* Keyframes for shaking the wave emoji */
-      @keyframes shake {
-        0% {
-          transform: rotate(0deg);
-        }
-        20% {
-          transform: rotate(-10deg);
-        }
-        40% {
-          transform: rotate(10deg);
-        }
-        60% {
-          transform: rotate(-10deg);
-        }
-        80% {
-          transform: rotate(0deg);
-        }
-        100% {
-          transform: rotate(0deg);
-        }
-      }
-
-      /* Initial state for the wave emoji */
-      #wave {
-        display: inline-block; /* Ensure it's visible */
-        animation: none; /* Start with no animation */
-      }
-
-      /* Social Icons Section - position just below the hero section */
-      .social-icons {
-        display: flex;
-        justify-content: center;
-        gap: 1rem; /* Adjust gap between icons */
-        margin-top: 0; /* Removed gap between icons and footer */
-      }
-
-      /* Ensure icons size remains consistent */
-      .social-icons img {
-        width: 40px; /* You can adjust the size as needed */
-        height: 40px;
-        transition: transform 0.3s ease;
-      }
-
-      .social-icons img:hover {
-        transform: scale(1.1); /* Slightly enlarge on hover */
-      }
-
-      /* Footer Styling */
-      footer {
-        margin-top: 0; /* Ensure the footer is positioned higher */
-        padding: 10px 0; /* Optional: Adjust footer padding */
-      }
-    </style>
-  </head>
-  <body class="dark">
-    <main>
-      <header>
-        <NavBar />
-      </header>
-
-      <section class="hero">
-        <h2>
-          Hi <span id="wave">👋</span>, I'm <a
-            id="avatar-trigger"
-            href="https://github.com/brash83/"
-            target="_blank"
-            title="View Github Profile"
-            class="text-orange-500 underline">Brian</a
-          >
-        </h2>
-        <p>Welcome to my portfolio! I'm a passionate front-end developer.</p>
-        <a href="/about" class="cta-button">Learn More About Me</a>
-      </section>
-
-      <!-- Social Icons Section, now placed directly below the hero section -->
-      <div class="social-icons">
-        <a href="https://github.com/brash83/" target="_blank">
-          <img
-            src="/icons/github.svg"
-            alt="Github"
-            class="w-8 h-8 text-gray-500 hover:text-gray-700"
-          />
-        </a>
-        <a href="https://www.linkedin.com/in/brash83/" target="_blank">
-          <img
-            src="/icons/linkedin.svg"
-            alt="LinkedIn"
-            class="w-8 h-8 text-gray-500 hover:text-gray-700"
-          />
-        </a>
-      </div>
-
-      <!-- Avatar Component -->
-      <div
-        id="avatar"
-        class="pointer-events-none absolute opacity-0 transition-all lg:block"
-        style="width: 150px; height: 150px; top: 20px; left: 20px;"
+<Layout
+  title="Welcome to My Portfolio"
+  description="Discover my work, skills, and passion for web development."
+  gradientColor="linear-gradient(45deg, #FFB6C1, #FF6347)"
+  pageClass="home-page"
+  <!--
+  Ensure
+  the
+  homepage
+  class
+  is
+  passed
+  correctly
+  --
+>
+  >
+  <!-- Hero Section (Main Introduction) -->
+  <section class="hero">
+    <h2>
+      Hi <span id="wave">👋</span>, I'm <a
+        id="avatar-trigger"
+        href="https://github.com/brash83/"
+        target="_blank"
+        title="View Github Profile"
+        class="text-orange-500 underline"
       >
-        <img
-          src="/images/profile-pic.png"
-          alt="Brian Cash"
-          class="w-full h-full rounded-full object-cover"
-        />
-      </div>
+        Brian
+      </a>
+    </h2>
+    <p>Welcome to my portfolio! I'm a passionate front-end developer.</p>
+    <a href="/about" class="cta-button">Learn More About Me</a>
+  </section>
 
-      <!-- Footer Section -->
-      <footer>
-        <p>&copy; 2024 Brian Cash. All rights reserved.</p>
-      </footer>
-    </main>
+  <!-- Social Icons Section -->
+  <div class="social-icons">
+    <a href="https://github.com/brash83/" target="_blank">
+      <img
+        src="/icons/github.svg"
+        alt="Github"
+        class="w-8 h-8 text-gray-500 hover:text-gray-700"
+      />
+    </a>
+    <a href="https://www.linkedin.com/in/brash83/" target="_blank">
+      <img
+        src="/icons/linkedin.svg"
+        alt="LinkedIn"
+        class="w-8 h-8 text-gray-500 hover:text-gray-700"
+      />
+    </a>
+  </div>
 
-    <!-- Client-side Script for Avatar Behavior -->
-    <script client:load>
-      window.onload = function () {
-        const wave = document.getElementById("wave");
+  <!-- Avatar Component -->
+  <div
+    id="avatar"
+    class="pointer-events-none absolute opacity-0 transition-all lg:block"
+    style="width: 150px; height: 150px; top: 20px; left: 20px;"
+  >
+    <img
+      src="/images/profile-pic.png"
+      alt="Brian Cash"
+      class="w-full h-full rounded-full object-cover"
+    />
+  </div>
 
-        if (wave) {
-          // Trigger shake animation after page load
-          wave.style.animation = "shake 3s ease-in-out 1"; // Animation duration and repeat set to 1 time
-        }
-      };
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2024 Brian Cash. All rights reserved.</p>
+  </footer>
+</Layout>
 
-      const avatar = document.getElementById("avatar");
-      const trigger = document.getElementById("avatar-trigger");
+<!-- Client-side Script for Avatar Behavior -->
+<script client:load>
+  window.onload = function () {
+    const wave = document.getElementById("wave");
 
-      // Ensure the mouseover event is working
-      trigger?.addEventListener("mouseover", () => {
-        console.log("Mouseover triggered");
-        if (avatar) {
-          avatar.style.opacity = "1"; // Show the avatar
-        }
-      });
+    if (wave) {
+      // Trigger shake animation after page load
+      wave.style.animation = "shake 3s ease-in-out 1"; // Animation duration and repeat set to 1 time
+    }
+  };
 
-      // Ensure mouseout event is working
-      trigger?.addEventListener("mouseout", () => {
-        console.log("Mouseout triggered");
-        if (avatar) {
-          avatar.style.opacity = "0"; // Hide the avatar
-        }
-      });
+  const avatar = document.getElementById("avatar");
+  const trigger = document.getElementById("avatar-trigger");
 
-      // Follow the mouse movement with the avatar
-      window.addEventListener("mousemove", (e) => {
-        if (avatar) {
-          const x = e.clientX;
-          const y = e.clientY;
-          avatar.style.transform = `translate(${x + 20}px, ${y + 20}px)`; // Offset for visibility
-        }
-      });
-    </script>
-  </body>
-</html>
+  // Ensure the mouseover event is working
+  trigger?.addEventListener("mouseover", () => {
+    if (avatar) {
+      avatar.style.opacity = "1"; // Show the avatar
+    }
+  });
+
+  // Ensure mouseout event is working
+  trigger?.addEventListener("mouseout", () => {
+    if (avatar) {
+      avatar.style.opacity = "0"; // Hide the avatar
+    }
+  });
+
+  // Follow the mouse movement with the avatar
+  window.addEventListener("mousemove", (e) => {
+    if (avatar) {
+      const x = e.clientX;
+      const y = e.clientY;
+      avatar.style.transform = `translate(${x + 20}px, ${y + 20}px)`; // Offset for visibility
+    }
+  });
+</script>

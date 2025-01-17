@@ -1,11 +1,32 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import NavBar from '../components/navbar.astro';
+// contact.astro
+import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Contact Me" description="Get in touch with me to discuss your project or ideas.">
+<Layout
+  title="Contact Me"
+  description="Get in touch with me to discuss your project or ideas."
+  pageClass="contact-page"
+  <!--
+  Ensure
+  the
+  correct
+  page
+  class
+  is
+  passed
+  here
+  --
+>
+  >
+  <!-- Main Contact Content Section -->
   <section class="main-content">
     <h3>Contact Information</h3>
-    <p>Email me at <a href="mailto:hello@example.com">hello@example.com</a></p>
+    <p>
+      Email me at <a href="mailto:hello@example.com">hello@example.com</a>
+    </p>
+    <p>
+      Feel free to reach out for inquiries, collaborations, or just to say hi!
+    </p>
   </section>
 </Layout>

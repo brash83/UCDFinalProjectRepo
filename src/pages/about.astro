@@ -1,16 +1,29 @@
 ---
 // about.astro
-import Layout from '../layouts/Layout.astro';
-
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout
   title="About Me"
   description="Learn more about my background, skills, and projects."
-  gradientColor="linear-gradient(45deg, #FF7E5F, #feb47b)"  <!-- Noticeable sunset gradient -->
+  gradientColor="linear-gradient(45deg, #FF7E5F, #feb47b)"
+  <!--
+  Sunset
+  gradient
+  --
 >
+  pageClass="about-page" <!-- Ensure this is passed as 'about-page' -->
+  >
   <section class="main-content">
     <h3>My Journey</h3>
-    <p>I've been working on web development for several years, continuously improving my skills and knowledge.</p>
+    <p>
+      I've been working on web development for several years, continuously
+      improving my skills and knowledge.
+    </p>
+    <p>
+      My expertise includes HTML, CSS, JavaScript, and frameworks such as React
+      and Astro. I am passionate about building intuitive and responsive
+      websites.
+    </p>
   </section>
 </Layout>
