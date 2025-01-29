@@ -8,7 +8,7 @@ Welcome to my personal portfolio website! This project is a showcase of my skill
 
 ### 🌓 Day/Night Mode
 
-![Homepage Screenshot] (https://github.com/brash83/UCDFinalProjectRepo/blob/brian-branch-2/public/images/Homepage.JPG)
+![Homepage Screenshot] ([https://raw.githubusercontent.com/brash83/UCDFinalProjectRepo/blob/brian-branch-2/public/images/Homepage.JPG)
 
 - **Technology**: JavaScript for DOM manipulation, CSS variables for theme styling.
 - **Description**: A toggle button dynamically switches between light and dark modes, applying a consistent theme across all pages using `classList` and event listeners.
