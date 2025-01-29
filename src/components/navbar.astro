@@ -1,15 +1,22 @@
----
-const siteTitle = "Brian Cash's Final Project";
----
-
 <nav class="navbar">
-  <div class="logo">
-    <h1>{siteTitle}</h1>
+  <div class="container">
+    <div class="navbar-brand-container">
+      <a class="navbar-brand" href="/">Brian's Portfolio</a>
+      <div class="profile-photo">
+        <img src="/images/me.jpg" alt="Profile Photo" />
+      </div>
+    </div>
+
+    <ul class="navbar-links">
+      <li><a href="/" class="nav-link">Home</a></li>
+      <li><a href="/about" class="nav-link">About</a></li>
+      <li><a href="/projects" class="nav-link">Projects</a></li>
+      <li><a href="/contact" class="nav-link">Contact</a></li>
+      <li class="nav-item">
+        <a href="/docs/FEWD%20Unit%201.pdf" class="nav-link" download>My CV</a>
+      </li>
+    </ul>
+
+    <button id="mode-toggle" class="mode-toggle">🌙</button>
   </div>
-  <ul class="nav-links">
-    <li><a href="/">Home</a></li>
-    <li><a href="/about">About</a></li>
-    <li><a href="/projects">Projects</a></li>
-    <li><a href="/contact">Contact</a></li>
-  </ul>
 </nav>

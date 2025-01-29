@@ -1,12 +1,11 @@
 ---
-// Layout.astro
 import NavBar from "../components/navbar.astro";
 
 interface Props {
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
   gradientColor?: string;
-  pageClass?: string; // New prop to pass page-specific class
+  pageClass?: string;
 }
 
 const { title, description, gradientColor, pageClass } = Astro.props;
@@ -17,37 +16,47 @@ const { title, description, gradientColor, pageClass } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content={description} />
-    <title>{title}</title>
+    <meta
+      name="description"
+      content={description || "Welcome to my portfolio"}
+    />
+    <title>{title || "My Portfolio"}</title>
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body class={pageClass || ""}>
-    <!-- Apply the page-specific class here -->
-    <header>
-      <NavBar />
-    </header>
-
-    <!-- Hero Section -->
+    <!-- Hero Section with Navbar inside -->
     <section
       class="hero"
       style={gradientColor
         ? `background: ${gradientColor};`
         : "background: linear-gradient(45deg, #FF6347, #4B0082);"}
     >
+      <NavBar />
       <div class="hero-content">
-        <h2>{title}</h2>
-        <p>{description}</p>
+        <h1>{title || "Welcome!"}</h1>
+        <p>{description || "Explore my world of creativity and code."}</p>
       </div>
     </section>
 
-    <!-- Main content injected here -->
     <main>
-      <slot />
+      <div class="content-container">
+        <slot />
+      </div>
     </main>
 
-    <!-- Footer Section -->
     <footer>
-      <p>&copy; 2024 Brian Cash. All rights reserved.</p>
+      <div class="content-container">
+        <p>&copy; 2024 Brian Cash. All rights reserved.</p>
+      </div>
     </footer>
+
+    <script>
+      const modeToggle = document.getElementById("mode-toggle");
+
+      modeToggle.addEventListener("click", () => {
+        const isDarkMode = document.body.classList.toggle("dark-mode");
+        modeToggle.textContent = isDarkMode ? "🌞" : "🌙";
+      });
+    </script>
   </body>
 </html>

@@ -1,26 +1,11 @@
 ---
-// index.astro
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout
-  title="Welcome to My Portfolio"
-  description="Discover my work, skills, and passion for web development."
-  gradientColor="linear-gradient(45deg, #FFB6C1, #FF6347)"
-  pageClass="home-page"
-  <!--
-  Ensure
-  the
-  homepage
-  class
-  is
-  passed
-  correctly
-  --
->
-  >
-  <!-- Hero Section (Main Introduction) -->
-  <section class="hero">
+<Layout pageClass="home-page">
+  <!-- Main content injected into Layout here -->
+  <div class="hero-content">
+    <br />
     <h2>
       Hi <span id="wave">👋</span>, I'm <a
         id="avatar-trigger"
@@ -32,81 +17,41 @@ import Layout from "../layouts/Layout.astro";
         Brian
       </a>
     </h2>
-    <p>Welcome to my portfolio! I'm a passionate front-end developer.</p>
+    <br />
+    <p>
+      Welcome to my portfolio! I've built solutions using a variety of programs,
+      and I'm now learning to be a front-end developer. Explore my world of
+      creativity and code.
+    </p>
+    <br />
     <a href="/about" class="cta-button">Learn More About Me</a>
-  </section>
+  </div>
 
   <!-- Social Icons Section -->
   <div class="social-icons">
-    <a href="https://github.com/brash83/" target="_blank">
+    <a
+      href="https://github.com/brash83/"
+      target="_blank"
+      aria-label="Visit my GitHub profile"
+    >
       <img
         src="/icons/github.svg"
         alt="Github"
         class="w-8 h-8 text-gray-500 hover:text-gray-700"
+        loading="lazy"
       />
     </a>
-    <a href="https://www.linkedin.com/in/brash83/" target="_blank">
+    <a
+      href="https://www.linkedin.com/in/brash83/"
+      target="_blank"
+      aria-label="Visit my LinkedIn profile"
+    >
       <img
         src="/icons/linkedin.svg"
         alt="LinkedIn"
         class="w-8 h-8 text-gray-500 hover:text-gray-700"
+        loading="lazy"
       />
     </a>
   </div>
-
-  <!-- Avatar Component -->
-  <div
-    id="avatar"
-    class="pointer-events-none absolute opacity-0 transition-all lg:block"
-    style="width: 150px; height: 150px; top: 20px; left: 20px;"
-  >
-    <img
-      src="/images/profile-pic.png"
-      alt="Brian Cash"
-      class="w-full h-full rounded-full object-cover"
-    />
-  </div>
-
-  <!-- Footer Section -->
-  <footer>
-    <p>&copy; 2024 Brian Cash. All rights reserved.</p>
-  </footer>
 </Layout>
-
-<!-- Client-side Script for Avatar Behavior -->
-<script client:load>
-  window.onload = function () {
-    const wave = document.getElementById("wave");
-
-    if (wave) {
-      // Trigger shake animation after page load
-      wave.style.animation = "shake 3s ease-in-out 1"; // Animation duration and repeat set to 1 time
-    }
-  };
-
-  const avatar = document.getElementById("avatar");
-  const trigger = document.getElementById("avatar-trigger");
-
-  // Ensure the mouseover event is working
-  trigger?.addEventListener("mouseover", () => {
-    if (avatar) {
-      avatar.style.opacity = "1"; // Show the avatar
-    }
-  });
-
-  // Ensure mouseout event is working
-  trigger?.addEventListener("mouseout", () => {
-    if (avatar) {
-      avatar.style.opacity = "0"; // Hide the avatar
-    }
-  });
-
-  // Follow the mouse movement with the avatar
-  window.addEventListener("mousemove", (e) => {
-    if (avatar) {
-      const x = e.clientX;
-      const y = e.clientY;
-      avatar.style.transform = `translate(${x + 20}px, ${y + 20}px)`; // Offset for visibility
-    }
-  });
-</script>
