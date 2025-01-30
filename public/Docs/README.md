@@ -8,25 +8,26 @@ Welcome to my personal portfolio website! This project is a showcase of my skill
 
 ### 🌓 Day/Night Mode
 
-![Homepage Screenshot](public/images/Homepage.JPG)
+![Homepage Screenshot](https://raw.githubusercontent.com/brash83/UCDFinalProjectRepo/brian-branch-2/public/images/Homepage.JPG)
 
 - **Technology**: JavaScript for DOM manipulation, CSS variables for theme styling.
 - **Description**: A toggle button dynamically switches between light and dark modes, applying a consistent theme across all pages using `classList` and event listeners.
 
 ### 🖼️ Projects Section
 
-![Project Screenshot](public/images/Projects.JPG)
+![Project Screenshot](https://raw.githubusercontent.com/brash83/UCDFinalProjectRepo/brian-branch-2/public/images/Projects.JPG)
 
 - **Technology**: JavaScript for dynamic rendering, responsive CSS grid layout for styling. Lightbox for photos
 - **Description**: Displays key projects with titles, descriptions, and associated media. Projects are sorted alphabetically using JavaScript.
 
 ### 📧 Contact Form
 
-![Contact Screenshot](public/images/Contact.JPG)
+![Contact Screenshot](https://raw.githubusercontent.com/brash83/UCDFinalProjectRepo/brian-branch-2/public/images/Contact.JPG)
 
 - **Technology**: Bootstrap for styling, HTML form validation.
 - **Description**: A functional form with required fields for name, email, and message. Placeholder logic for form submission allows future integration with a backend or email service.
-  ![About Screenshot](public/images/About.JPG)
+
+![About Screenshot](https://raw.githubusercontent.com/brash83/UCDFinalProjectRepo/brian-branch-2/public/images/About.JPG)
 
 Embedded music
 
@@ -39,7 +40,7 @@ Embedded music
 
 ## 🛠️ Technologies Used
 
-![Tech used](public/images/Welcome.JPG)
+![Tech Used](https://raw.githubusercontent.com/brash83/UCDFinalProjectRepo/brian-branch-2/public/images/Welcome.JPG)
 
 ### Core:
 
