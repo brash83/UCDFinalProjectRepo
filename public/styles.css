@@ -380,7 +380,32 @@ body.dark-mode .contact-form button {
   filter: invert(1); /* Inverts colors, making black -> white */
 }
 
+.project-details ul {
+  list-style-type: disc; /* Ensures circular bullet points */
+  padding-left: 20px; /* Adds spacing to align properly */
+}
 
+.thumbnail {
+  width: 100px; /* Adjust size for thumbnail */
+  height: auto;
+  border-radius: 8px;
+  margin: 5px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.thumbnail:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.lightbox-gallery {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.lightbox {
+  margin-right: 10px;
+}
 
 
 /* Add keyframes for the waving animation on the emoji */
