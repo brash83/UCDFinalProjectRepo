@@ -35,6 +35,7 @@ a {
   text-decoration: none;
 }
 
+/* BUTTONS */
 .cta-button {
   padding: 0.75rem 2rem;
   background-color: #ee8230;
@@ -45,6 +46,8 @@ a {
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s;
+  display: block;
+  margin: 20px auto;
 }
 
 .cta-button:hover {
@@ -253,6 +256,17 @@ button {
   .hero p {
     font-size: 1.125rem;
   }
+
+  .contact-form {
+    padding: 20px;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 1rem; /* Ensure inputs are easy to read on smaller screens */
+  }
+  .contact-form button {
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -325,17 +339,7 @@ button {
 }
 
 .contact-form button:hover {
-  background-color: #377bf6;
-}
-
-/* SMALLER SCREENS (RESPONSIVE) */
-@media (max-width: 768px) {
-  .contact-form {
-    padding: 20px;
-  }
-  .contact-form button {
-    font-size: 1rem;
-  }
+  background-color: #420875;
 }
 
 /* DARK MODE */
@@ -343,7 +347,6 @@ body.dark-mode {
   background-color: #121212;
   color: #fff;
 }
-
 
 /* Dark Mode Hero Section */
 body.dark-mode .hero {
@@ -356,7 +359,7 @@ body.dark-mode .cta-button {
 }
 
 body.dark-mode .cta-button:hover {
-  background-color: #ee8230;
+  background-color: #420875;
 }
 
 /* Dark Mode for form */
@@ -385,28 +388,29 @@ body.dark-mode .contact-form button {
   padding-left: 20px; /* Adds spacing to align properly */
 }
 
-.thumbnail {
-  width: 100px; /* Adjust size for thumbnail */
-  height: auto;
-  border-radius: 8px;
-  margin: 5px;
-  transition: transform 0.3s ease;
-  cursor: pointer;
+.project-thumbnail {
+  width: 100px; /* Set the size of the thumbnail */
+  height: 100px; /* Set the height of the thumbnail */
+  object-fit: cover; /* Ensure the image fills the space without distorting */
+  border-radius: 10px;
+  cursor: pointer; /* Add pointer cursor to indicate that it's clickable */
+  margin: 5px; /* Add space between thumbnails */
+  transition: transform 0.3s ease; /* Smooth transition effect on hover */
 }
 
-.thumbnail:hover {
-  transform: scale(1.05); /* Slight zoom effect on hover */
+.project-thumbnail:hover {
+  transform: scale(1.1); /* Slightly enlarge the thumbnail on hover */
 }
 
 .lightbox-gallery {
   display: flex;
   flex-wrap: wrap;
+  gap: 10px; /* Add spacing between thumbnails */
 }
 
 .lightbox {
-  margin-right: 10px;
+  /* You can control the margin for lightbox items here */
 }
-
 
 /* Add keyframes for the waving animation on the emoji */
 @keyframes wave {
@@ -431,6 +435,7 @@ body.dark-mode .contact-form button {
 #wave {
   display: inline-block; /* Ensures the span behaves like an inline element */
   animation: wave 1.5s ease-in-out infinite; /* Apply the waving animation */
+  transform-origin: bottom; /* Make it wave from the bottom */
 }
 
 /* Update the projects-list to display the links horizontally */
@@ -468,6 +473,11 @@ body.dark-mode .contact-form button {
   transform: translateY(1px);
 }
 
+.project-details {
+  margin-bottom: 300px; /* Increase the margin between projects */
+}
+
+
 .currently-listening {
   text-align: center;
   margin: 30px 0;
@@ -504,4 +514,49 @@ body.dark-mode .contact-form button {
 
 .currently-listening a:hover {
   text-decoration: underline;
+}
+
+.popup-overlay {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100vw;  /* Ensures it covers the whole viewport */
+  height: 100vh; /* Ensures it covers the whole viewport */
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none; /* Hidden by default */
+  z-index: 9999;  /* Ensure it's on top */
+  align-items: center;
+  justify-content: center;
+}
+
+.popup {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  background-color: white;
+  padding: 20px;
+  overflow: auto;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.popup img {
+  width: 100%;
+  height: auto;
+}
+
+.popup button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+.popup button:hover {
+  color: red; /* Optional: change color on hover */
 }
