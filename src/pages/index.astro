@@ -54,4 +54,21 @@ import Layout from "../layouts/Layout.astro";
       />
     </a>
   </div>
+
+  <!-- Add the JavaScript for the fade effect -->
+  <script type="module">
+    document.addEventListener("DOMContentLoaded", function () {
+      const heroSection = document.querySelector(".hero");
+
+      // Handle scroll event
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > 100) {
+          // Adjust scroll threshold as needed
+          heroSection.classList.add("fade-out");
+        } else {
+          heroSection.classList.remove("fade-out");
+        }
+      });
+    });
+  </script>
 </Layout>
