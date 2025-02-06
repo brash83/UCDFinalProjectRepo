@@ -25,7 +25,7 @@ Welcome to my personal portfolio website! This project is a showcase of my skill
 ![Contact Screenshot](https://raw.githubusercontent.com/brash83/UCDFinalProjectRepo/brian-branch-2/public/images/Contact.JPG)
 
 - **Technology**: Bootstrap for styling, HTML form validation.
-- **Description**: A functional form with required fields for name, email, and message. Placeholder logic for form submission allows future integration with a backend or email service.
+- **Description**: A functional form with required fields for name, email, and message. The form is integrated with Formspree, a simple API for handling form submissions without a back-end. Formspree processes the form data and sends an email to my gmail.
 
 ![About Screenshot](https://raw.githubusercontent.com/brash83/UCDFinalProjectRepo/brian-branch-2/public/images/About.JPG)
 
