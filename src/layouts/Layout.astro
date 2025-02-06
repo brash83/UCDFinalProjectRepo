@@ -21,7 +21,7 @@ const { title, description, gradientColor, pageClass } = Astro.props;
       content={description || "Welcome to my portfolio"}
     />
     <title>{title || "My Portfolio"}</title>
-    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/UCDFinalProjectRepo/styles.css" />
   </head>
   <body class={pageClass || ""}>
     <!-- Hero Section with Navbar inside -->
@@ -46,17 +46,30 @@ const { title, description, gradientColor, pageClass } = Astro.props;
 
     <footer>
       <div class="content-container">
-        <p>&copy; 2024 Brian Cash. All rights reserved.</p>
+        <p>&copy; 2025 Brian Cash. All rights reserved.</p>
       </div>
     </footer>
 
     <script>
+      // Ensure that modeToggle is not null before adding the event listener
       const modeToggle = document.getElementById("mode-toggle");
 
-      modeToggle.addEventListener("click", () => {
-        const isDarkMode = document.body.classList.toggle("dark-mode");
-        modeToggle.textContent = isDarkMode ? "🌞" : "🌙";
-      });
+      if (modeToggle) {
+        // Check localStorage or a default for the initial dark mode state
+        let isDarkMode = localStorage.getItem("dark-mode") === "true"; // Check if dark mode is enabled from previous session
+
+        // Initially set the icon based on the current theme
+        modeToggle.textContent = isDarkMode ? "🌙" : "🌞"; // Assuming 🌙 for dark mode and 🌞 for light mode
+
+        modeToggle.addEventListener("click", () => {
+          isDarkMode = !isDarkMode; // Toggle the mode
+          modeToggle.textContent = isDarkMode ? "🌙" : "🌞"; // Toggle the icon
+
+          // Update the theme (e.g., add/remove class or store in localStorage)
+          document.body.classList.toggle("dark-mode", isDarkMode);
+          localStorage.setItem("dark-mode", isDarkMode.toString()); // Save the preference
+        });
+      }
     </script>
   </body>
 </html>

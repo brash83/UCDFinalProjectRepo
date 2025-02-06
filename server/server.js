@@ -15,7 +15,11 @@ app.use(cors({
 
 app.use(express.json());
 
-n
+// POST route to handle sending the email
+app.post("/send-message", async (req, res) => {
+  // Destructure the form data from the request body
+  const { name, email, message } = req.body;
+
   // Validate the form data
   if (!name || !email || !message) {
     return res.status(400).json({

@@ -8,400 +8,346 @@ import Layout from "../layouts/Layout.astro";
   gradientColor="linear-gradient(45deg, #BCFFCC, #002C5F)"
   pageClass="projects-page"
 >
-  <!-- Projects List Section -->
-  <section class="projects-list"></section>
+  <!-- Style for Red & Green Circles -->
+  <style>
+    .circle {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      margin-right: 8px;
+    }
+    .red {
+      background-color: red;
+    }
+    .green {
+      background-color: green;
+    }
+    /* Additional styling for the project navigation buttons */
+    .projects-list {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .project {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .project-link {
+      color: white;
+      text-decoration: none;
+      padding: 8px 16px;
+      background-color: #3c8d99;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    .project-link:hover {
+      background-color: #bcffcc;
+      color: white;
+    }
+    /* Popup lightbox */
+    .popup-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+    }
+    .popup {
+      position: relative;
+      max-width: 90%;
+      max-height: 90%;
+      background: white;
+      padding: 10px;
+    }
+    .popup-image {
+      max-width: 100%;
+      max-height: 80vh; /* Allow image to scale but prevent it from zooming too large */
+      object-fit: contain; /* Keep the aspect ratio */
+    }
+    .close-btn {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      background-color: #ff0000;
+      color: white;
+      font-size: 20px;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .close-btn:hover {
+      background-color: #ff6666;
+    }
+  </style>
 
-  <br /><br />
+  <!-- Projects Navigation List (Buttons) -->
+  <section class="projects-list">
+    <div class="project">
+      <a href="#project1" class="project-link">Recce Library App</a>
+    </div>
+    <div class="project">
+      <a href="#project2" class="project-link">Overtime Dashboard</a>
+    </div>
+    <div class="project">
+      <a href="#project3" class="project-link">Vehicle Reservations App</a>
+    </div>
+    <div class="project">
+      <a href="#project4" class="project-link">Operations Bot</a>
+    </div>
+  </section>
   <br />
   <br />
   <br />
   <br />
   <br />
-  <!-- Project 1 Details -->
+  <br />
+  <!-- Project 1: Recce Library App -->
   <section class="project-details" id="project1">
     <div class="project-detail-left">
-      <h1 class="project-title">
-        Recce Library App <br />
-      </h1>
-      <br />
+      <h1 class="project-title">Recce Library App</h1>
+
       <h2 class="problem-heading">
         <span class="circle red"></span> Problems
       </h2>
       <p>
-        Recces would be carried out and the information wouldn't be saved
-        anywhere leading to sites being rechecked multiple times.
+        Recces were carried out but not saved, leading to redundant site visits.
       </p>
 
       <h2 class="solution-heading">
-        <span class="circle green"></span> Solution (created with Power Apps)
+        <span class="circle green"></span> Solution (Power Apps)
       </h2>
       <ul>
         <li>
-          <strong>App Creation:</strong> Mobile and desktop application to input
-          quality and uniform recce information.
+          <strong>App Creation:</strong> Mobile & desktop app for uniform recce info.
         </li>
         <li>
-          <strong>Design:</strong> Designed with ease of use in mind. Bi-Lingual
-          to accommodate Irish speakers.
+          <strong>Design:</strong> User-friendly, bilingual (English/Irish).
         </li>
         <li>
-          <strong>Database:</strong> All information and media housed in an in-app
-          gallery and backed up in SharePoint.
+          <strong>Database:</strong> Data stored in an in-app gallery & SharePoint.
         </li>
       </ul>
     </div>
-    <br />
+
     <div class="project-detail-right">
       <div class="carousel">
         <img
-          src="/images/Rec1.jpg"
-          alt="Thumbnail 1"
+          src="/UCDFinalProjectRepo/images/Rec1.jpg"
           class="project-thumbnail"
-          data-full="/images/Rec1.jpg"
+          data-full="/UCDFinalProjectRepo/images/Rec1.jpg"
         />
         <img
-          src="/images/Rec2.jpg"
-          alt="Thumbnail 2"
+          src="/UCDFinalProjectRepo/images/Rec2.jpg"
           class="project-thumbnail"
-          data-full="/images/Rec2.jpg"
+          data-full="/UCDFinalProjectRepo/images/Rec2.jpg"
         />
         <img
-          src="/images/Rec3.jpg"
-          alt="Thumbnail 3"
+          src="/UCDFinalProjectRepo/images/Rec3.jpg"
           class="project-thumbnail"
-          data-full="/images/Rec3.jpg"
+          data-full="/UCDFinalProjectRepo/images/Rec3.jpg"
         />
         <img
-          src="/images/Rec4.jpg"
-          alt="Thumbnail 4"
+          src="/UCDFinalProjectRepo/images/Rec4.jpg"
           class="project-thumbnail"
-          data-full="/images/Rec4.jpg"
+          data-full="/UCDFinalProjectRepo/images/Rec4.jpg"
         />
-        <br />
       </div>
     </div>
 
-    <!-- Scroll-to-top button -->
-    <a href="#top" class="scroll-to-top">
-      <span class="arrow-up">&#8593;</span> Back to Top
-    </a>
+    <a href="#top" class="scroll-to-top">&#8593; Back to Top</a>
   </section>
 
-  <br />
-  <!-- Project 2 Details -->
+  <!-- Project 2: Overtime Dashboard -->
   <section class="project-details" id="project2">
     <div class="project-detail-left">
-      <h1 class="project-title">
-        Overtime Dashboard <br />
-      </h1>
-      <br />
+      <h1 class="project-title">Overtime Dashboard</h1>
+
       <h2 class="problem-heading">
         <span class="circle red"></span> Problems
       </h2>
       <p>
-        Inability to report on: overtime reasons, yearly trends, employee-level
-        review.
+        Lack of visibility on overtime trends, reasons, and employee-level
+        reviews.
       </p>
 
       <h2 class="solution-heading">
-        <span class="circle green"></span> Solution (created with Power BI)
+        <span class="circle green"></span> Solution (Power BI)
       </h2>
       <ul>
         <li>
-          <strong>Tracker Creation:</strong> Simple Excel-based overtime tracker.
+          <strong>Tracker Creation:</strong> Excel-based overtime tracker.
         </li>
         <li>
-          <strong>Connection:</strong> Integrated data into Power BI for accuracy.
-        </li>
-        <li>
-          <strong>Design:</strong> Dashboard with filters by genre, person, date
-          range.
+          <strong>Connection:</strong> Integrated into Power BI for accuracy.
         </li>
         <li>
           <strong>Expansion:</strong> Extended to multiple departments in 2022.
         </li>
-        <li>
-          <strong>Line Management:</strong> Employee-level reporting for managers.
-        </li>
-        <li>
-          <strong>KPI and Metrics:</strong> Automated statistics added.
-        </li>
       </ul>
     </div>
-    <br />
+
     <div class="project-detail-right">
       <div class="carousel">
         <img
-          src="/images/ot1.jpg"
-          alt="Thumbnail 1"
+          src="/UCDFinalProjectRepo/images/ot1.jpg"
           class="project-thumbnail"
-          data-full="/images/ot1.jpg"
+          data-full="/UCDFinalProjectRepo/images/ot1.jpg"
         />
         <img
-          src="/images/ot2.jpg"
-          alt="Thumbnail 2"
+          src="/UCDFinalProjectRepo/images/ot2.jpg"
           class="project-thumbnail"
-          data-full="/images/ot2.jpg"
+          data-full="/UCDFinalProjectRepo/images/ot2.jpg"
         />
       </div>
     </div>
-    <br />
-    <!-- Scroll-to-top button -->
-    <a href="#top" class="scroll-to-top">
-      <span class="arrow-up">&#8593;</span> Back to Top
-    </a>
+
+    <a href="#top" class="scroll-to-top">&#8593; Back to Top</a>
   </section>
 
-  <!-- Project 3 Details -->
+  <!-- Project 3: Vehicle Reservations App -->
   <section class="project-details" id="project3">
     <div class="project-detail-left">
-      <h1 class="project-title">
-        Vehicle Reservations App <br />
-      </h1>
-      <br />
+      <h1 class="project-title">Vehicle Reservations App</h1>
+
       <h2 class="problem-heading">
         <span class="circle red"></span> Problems
       </h2>
       <p>
-        No system in place to manage our vehicle fleet, report issues, and avoid
-        unnecessary commercial hires.
+        No system in place to manage vehicle fleet and avoid unnecessary hires.
       </p>
 
       <h2 class="solution-heading">
-        <span class="circle green"></span> Solution (created with Power Apps)
+        <span class="circle green"></span> Solution (Power Apps)
       </h2>
       <ul>
         <li>
-          <strong>App Creation:</strong> Mobile & desktop system for reserving vehicles.
+          <strong>App Creation:</strong> Mobile & desktop system for reservations.
         </li>
         <li>
-          <strong>'Return Centre':</strong> Includes time-stamped photo & video check-in.
+          <strong>Return Centre:</strong> Includes time-stamped photo/video check-in.
         </li>
         <li>
           <strong>Archive:</strong> All bookings & media stored in SharePoint.
         </li>
       </ul>
-
-      <br />>
     </div>
+
     <div class="project-detail-right">
       <div class="carousel">
         <img
-          src="/images/veh1.jpg"
-          alt="Thumbnail 1"
+          src="/UCDFinalProjectRepo/images/veh1.jpg"
           class="project-thumbnail"
-          data-full="/images/veh1.jpg"
+          data-full="/UCDFinalProjectRepo/images/veh1.jpg"
         />
         <img
-          src="/images/veh2.jpg"
-          alt="Thumbnail 2"
+          src="/UCDFinalProjectRepo/images/veh2.jpg"
           class="project-thumbnail"
-          data-full="/images/veh2.jpg"
+          data-full="/UCDFinalProjectRepo/images/veh2.jpg"
         />
         <img
-          src="/images/veh3.jpg"
-          alt="Thumbnail 3"
+          src="/UCDFinalProjectRepo/images/veh3.jpg"
           class="project-thumbnail"
-          data-full="/images/veh3.jpg"
+          data-full="/UCDFinalProjectRepo/images/veh3.jpg"
         />
       </div>
     </div>
-    <br />
-    <!-- Scroll-to-top button -->
-    <a href="#top" class="scroll-to-top">
-      <span class="arrow-up">&#8593;</span> Back to Top
-    </a>
+
+    <a href="#top" class="scroll-to-top">&#8593; Back to Top</a>
   </section>
 
-  <br /><br />
-
-  <!-- Project 4 Details -->
+  <!-- Project 4: Operations Bot -->
   <section class="project-details" id="project4">
     <div class="project-detail-left">
-      <h1 class="project-title">
-        Operations Bot へ[ ᴼ ▃ ᴼ ]_/¯ <br />
-      </h1>
-      <br />
+      <h1 class="project-title">Operations Bot へ[ ᴼ ▃ ᴼ ]_/¯</h1>
+
       <h2 class="problem-heading">
         <span class="circle red"></span> Problems
       </h2>
-      <p>
-        The operations team identified 12 areas in which to comply with the
-        company's GDPR practices. This issue was a lack of a system to remind
-        when to action these.
-      </p>
+      <p>GDPR compliance lacked a system for tracking necessary actions.</p>
 
       <h2 class="solution-heading">
-        <span class="circle green"></span> Solution (created with Power Automate)
+        <span class="circle green"></span> Solution (Power Automate)
       </h2>
       <ul>
         <li>
-          <strong>Creation:</strong> After all ROPAs were signed off and sent to
-          the GDPR team, I created an Excel sheet to assign actions to employees
-          and map out specified reminder dates for up to ten years. Using Power Automate,
-          timed reminders fire via a 'bot' to the assignee outlining the exact task
-          required with a link to the source documents and GDPR policies. This is
-          known as 'Ops Bot' <br />
+          <strong>Automation:</strong> Assigned tasks with scheduled reminders.
+        </li>
+        <li>
+          <strong>Bot Integration:</strong> Messages employees with action items.
         </li>
       </ul>
-
-      <br />
     </div>
+
     <div class="project-detail-right">
       <div class="carousel">
         <img
-          src="/images/Bot1.jpg"
-          alt="Thumbnail 1"
+          src="/UCDFinalProjectRepo/images/Bot1.jpg"
           class="project-thumbnail"
-          data-full="/images/Bot1.jpg"
+          data-full="/UCDFinalProjectRepo/images/Bot1.jpg"
         />
         <img
-          src="/images/Bot2.jpg"
-          alt="Thumbnail 2"
+          src="/UCDFinalProjectRepo/images/Bot2.jpg"
           class="project-thumbnail"
-          data-full="/images/Bot2.jpg"
+          data-full="/UCDFinalProjectRepo/images/Bot2.jpg"
         />
       </div>
     </div>
-    <br />
-    <!-- Scroll-to-top button -->
-    <a href="#top" class="scroll-to-top">
-      <span class="arrow-up">&#8593;</span> Back to Top
-    </a>
+
+    <a href="#top" class="scroll-to-top">&#8593; Back to Top</a>
   </section>
 
-  <!-- Lightbox Popup (for images) -->
+  <!-- Lightbox Popup -->
   <div id="popupOverlay" class="popup-overlay">
     <div class="popup">
-      <span class="close-btn">&times;</span>
+      <button class="close-btn">&times;</button>
       <img id="popupImage" class="popup-image" />
     </div>
   </div>
 
-  <!-- Client-side Script for Sorting, Rendering Projects, and Lightbox -->
-  <script client:load>
-    window.onload = function () {
-      const projects = [
-        { title: "Recce Library App", id: "project1" },
-        { title: "Overtime Dashboard", id: "project2" },
-        { title: "Vehicle Reservations", id: "project3" },
-        { title: "Operations Bot へ[ ᴼ ▃ ᴼ ]_/¯", id: "project4" },
-
-        ,
-      ];
-
-      // Generate HTML for the projects list
-      const projectList = document.querySelector(".projects-list");
-      projectList.innerHTML = projects
-        .map(
-          (project) => `
-        <div class="project">
-          <a href="#${project.id}" class="project-link">${project.title}</a>
-        </div>
-      `
-        )
-        .join("");
-
-      // Add smooth scrolling functionality to project links
-      const projectLinks = document.querySelectorAll(".project-link");
-      projectLinks.forEach((link) => {
-        link.addEventListener("click", (e) => {
-          e.preventDefault();
-          const targetId = e.target.getAttribute("href").substring(1); // Get the target ID without '#'
-          const targetSection = document.getElementById(targetId);
-
-          targetSection.scrollIntoView({
-            behavior: "smooth", // Smooth scroll
-            block: "start", // Align the section to the top
-          });
-        });
-      });
-
-      // Lightbox functionality
+  <!-- JavaScript -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
       const images = document.querySelectorAll(".project-thumbnail");
 
       images.forEach((image) => {
-        image.addEventListener("click", function () {
+        image.addEventListener("click", function (this: HTMLImageElement) {
+          const popupImage = document.getElementById(
+            "popupImage"
+          ) as HTMLImageElement | null;
           const popupOverlay = document.getElementById("popupOverlay");
-          const popupImage = document.getElementById("popupImage");
 
-          // Set the clicked image to be the popup image
-          popupImage.src = this.dataset.full;
-
-          // Show the lightbox
-          popupOverlay.style.display = "flex";
+          if (popupImage && popupOverlay) {
+            popupImage.src = this.getAttribute("data-full") as string;
+            popupOverlay.style.display = "flex"; // Show the overlay
+          }
         });
       });
 
-      // Close lightbox functionality
-      const closeBtn = document.querySelector(".close-btn");
+      // Close button functionality
+      const closeButton = document.querySelector(".close-btn");
       const popupOverlay = document.getElementById("popupOverlay");
-      closeBtn.addEventListener("click", function () {
-        popupOverlay.style.display = "none";
-      });
 
-      // Close lightbox when clicking outside the image
-      popupOverlay.addEventListener("click", function (e) {
-        if (e.target === popupOverlay) {
+      if (closeButton && popupOverlay) {
+        closeButton.addEventListener("click", () => {
           popupOverlay.style.display = "none";
-        }
-      });
-    };
+        });
+      }
+
+      // Close the overlay if clicked outside the image
+      if (popupOverlay) {
+        popupOverlay.addEventListener("click", (event) => {
+          if (event.target === popupOverlay) {
+            popupOverlay.style.display = "none";
+          }
+        });
+      }
+    });
   </script>
-
-  <style>
-    /* Adding circle styles */
-    .circle {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      display: inline-block;
-      margin-right: 10px;
-    }
-
-    .circle.red {
-      background-color: #c30808; /* Red circle */
-    }
-
-    .circle.green {
-      background-color: #04a404; /* Green circle */
-    }
-
-    /* Adding styling for h1 */
-    .project-title {
-      color: #008080; /* Teal color */
-      font-size: 2rem; /* Larger font size for titles */
-      font-weight: bold; /* Bold font */
-      text-transform: uppercase; /* Uppercase titles */
-      line-height: 1.2; /* Line height for better spacing */
-    }
-
-    /* Add other relevant styles */
-    .projects-list {
-      list-style: none;
-      padding: 0;
-    }
-
-    .project {
-      margin: 10px 0;
-    }
-
-    .project-link {
-      text-decoration: none;
-      font-weight: bold;
-      color: #377bf6; /* Blue color for the project links */
-    }
-
-    .project-link:hover {
-      color: #64ea55; /* Green color on hover */
-    }
-
-    /* Styling for problem/solution heading */
-    .problem-heading,
-    .solution-heading {
-      font-size: 1.5rem;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-  </style>
 </Layout>

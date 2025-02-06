@@ -66,7 +66,7 @@ import Layout from "../layouts/Layout.astro";
       aria-label="Visit my GitHub profile"
     >
       <img
-        src="/icons/github.svg"
+        src="/UCDFinalProjectRepo/icons/github.svg"
         alt="Github"
         class="w-8 h-8 text-gray-500 hover:text-gray-700"
         loading="lazy"
@@ -78,7 +78,7 @@ import Layout from "../layouts/Layout.astro";
       aria-label="Visit my LinkedIn profile"
     >
       <img
-        src="/icons/linkedin.svg"
+        src="/UCDFinalProjectRepo/icons/linkedin.svg"
         alt="LinkedIn"
         class="w-8 h-8 text-gray-500 hover:text-gray-700"
         loading="lazy"
@@ -86,16 +86,25 @@ import Layout from "../layouts/Layout.astro";
     </a>
   </div>
 
+  <!-- JavaScript -->
   <script>
     document
       .getElementById("contact-form")
-      .addEventListener("submit", function (event) {
+      ?.addEventListener("submit", function (event) {
         event.preventDefault(); // Prevent default form submission
 
         let isValid = true;
-        const name = document.getElementById("name").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const message = document.getElementById("message").value.trim();
+        const name =
+          (document.getElementById("name") as HTMLInputElement)?.value.trim() ||
+          "";
+        const email =
+          (
+            document.getElementById("email") as HTMLInputElement
+          )?.value.trim() || "";
+        const message =
+          (
+            document.getElementById("message") as HTMLTextAreaElement
+          )?.value.trim() || "";
 
         const nameError = document.getElementById("name-error");
         const emailError = document.getElementById("email-error");
@@ -103,26 +112,27 @@ import Layout from "../layouts/Layout.astro";
         const formMessage = document.getElementById("form-message");
 
         // Reset previous error messages
-        nameError.innerText = "";
-        emailError.innerText = "";
-        messageError.innerText = "";
-        formMessage.innerHTML = "";
+        if (nameError) nameError.innerText = "";
+        if (emailError) emailError.innerText = "";
+        if (messageError) messageError.innerText = "";
+        if (formMessage) formMessage.innerHTML = "";
 
         // Name validation
         if (name === "") {
-          nameError.innerText = "Please enter your name.";
+          if (nameError) nameError.innerText = "Please enter your name.";
           isValid = false;
         }
 
         // Email validation (must contain @ and .)
         if (!email.includes("@") || !email.includes(".")) {
-          emailError.innerText = "Please enter a valid email address.";
+          if (emailError)
+            emailError.innerText = "Please enter a valid email address.";
           isValid = false;
         }
 
         // Message validation
         if (message === "") {
-          messageError.innerText = "Please enter a message.";
+          if (messageError) messageError.innerText = "Please enter a message.";
           isValid = false;
         }
 
@@ -130,25 +140,31 @@ import Layout from "../layouts/Layout.astro";
         if (!isValid) return;
 
         // Send form data to Formspree
-        const formData = new FormData(event.target);
-        fetch(event.target.action, {
+        const formData = new FormData(event.target as HTMLFormElement);
+        fetch((event.target as HTMLFormElement).action, {
           method: "POST",
           body: formData,
           headers: { Accept: "application/json" },
         })
           .then((response) => {
             if (response.ok) {
-              formMessage.innerHTML =
-                "<span style='color: green;'>Message sent successfully!</span>";
-              event.target.reset();
+              if (formMessage) {
+                formMessage.innerHTML =
+                  "<span style='color: green;'>Message sent successfully!</span>";
+              }
+              (event.target as HTMLFormElement).reset();
             } else {
-              formMessage.innerHTML =
-                "<span style='color: red;'>Oops! Something went wrong.</span>";
+              if (formMessage) {
+                formMessage.innerHTML =
+                  "<span style='color: red;'>Oops! Something went wrong.</span>";
+              }
             }
           })
-          .catch((error) => {
-            formMessage.innerHTML =
-              "<span style='color: red;'>An error occurred. Please try again.</span>";
+          .catch(() => {
+            if (formMessage) {
+              formMessage.innerHTML =
+                "<span style='color: red;'>An error occurred. Please try again.</span>";
+            }
           });
       });
   </script>
