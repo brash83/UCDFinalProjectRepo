@@ -1,54 +1,149 @@
-# Astro Starter Kit: Basics
+# Brian's Portfolio
 
-```sh
-npm create astro@latest -- --template basics
-```
+Welcome to my personal portfolio website! This project is a showcase of my skills, projects, and experience as a front-end web developer. The site is built with modern web technologies and focuses on performance, accessibility, and responsiveness.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+---
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🌟 Features
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+### 🌓 Day/Night Mode
 
-## 🚀 Project Structure
+![Homepage Screenshot](https://raw.githubusercontent.com/brash83/UCDFinalProjectRepo/brian-branch-2/public/images/Homepage.JPG)
 
-Inside of your Astro project, you'll see the following folders and files:
+- **Technology**: JavaScript for DOM manipulation, CSS variables for theme styling.
+- **Description**: A toggle button dynamically switches between light and dark modes, applying a consistent theme across all pages using `classList` and event listeners.
 
-```text
-/
+### 🖼️ Projects Section
+
+![Project Screenshot](https://raw.githubusercontent.com/brash83/UCDFinalProjectRepo/brian-branch-2/public/images/Projects.JPG)
+
+- **Technology**: JavaScript for dynamic rendering, responsive CSS grid layout for styling. Lightbox for photos
+- **Description**: Displays key projects with titles, descriptions, and associated media. Projects are sorted alphabetically using JavaScript.
+
+### 📧 Contact Form
+
+![Contact Screenshot](https://raw.githubusercontent.com/brash83/UCDFinalProjectRepo/brian-branch-2/public/images/Contact.JPG)
+
+- **Technology**: Bootstrap for styling, HTML form validation.
+- **Description**: A functional form with required fields for name, email, and message. The form is integrated with Formspree, a simple API for handling form submissions without a back-end. Formspree processes the form data and sends an email to my gmail.
+
+![About Screenshot](https://raw.githubusercontent.com/brash83/UCDFinalProjectRepo/brian-branch-2/public/images/About.JPG)
+
+Embedded music
+
+### 📄 Downloadable CV
+
+- **Technology**: HTML `<a>` tag with `download` attribute.
+- **Description**: A link in the navigation bar allows users to download a PDF copy of my CV directly.
+
+---
+
+## 🛠️ Technologies Used
+
+![Tech Used](https://raw.githubusercontent.com/brash83/UCDFinalProjectRepo/brian-branch-2/public/images/Welcome.JPG)
+
+### Core:
+
+- **HTML5**: For semantic, accessible, and structured markup.
+- **CSS3**: For responsive design and custom styles, including media queries and Bootstrap utilities.
+- **JavaScript**: For interactive features such as theme switching and dynamic project rendering.
+
+### Frameworks & Libraries:
+
+- **Astro.js**: A modern framework for building fast, component-based static sites.
+- **Bootstrap**: For prebuilt UI components and responsive layouts.
+
+### Design:
+
+- **CSS Grid & Flexbox**: Used extensively for layout design and alignment.
+- **CSS Variables**: Simplified theme management for light and dark modes.
+
+### File Management:
+
+- **Public Directory**: Stores assets such as images and downloadable documents (e.g., CV PDF).
+- **Global Styles**: Centralized in a `global.css` file to ensure consistent design throughout the site.
+
+---
+
+## 📂 File Structure
+
+```plaintext
+.
 ├── public/
-│   └── favicon.svg
+│   ├── Docs/
+│   │   └── FEWD Unit 1.pdf     # Downloadable CV
+│   ├── images/                 # Image assets for projects and site branding
+│   └── favicon.ico             # Website favicon
 ├── src/
-│   ├── components/
-│   │   └── Card.astro
 │   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   │   └── Layout.astro        # Main layout component
+│   ├── pages/
+│   │   ├── index.astro         # Home page
+│   │   ├── about.astro         # About page
+│   │   ├── projects.astro      # Projects page
+│   │   └── contact.astro       # Contact page
+│   ├── styles/
+│   │   └── global.css          # Centralized global styles
+│   └── components/
+│       └── Navbar.astro        # Navbar component
+├── package.json                # Node.js dependencies and scripts
+└── README.md                   # Documentation for the project
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+⚙️ How It Works
+Dynamic Project Rendering
+Sorting Logic: JavaScript reads a hardcoded array of projects, sorts them alphabetically by title, and generates HTML dynamically.
+Implementation: Uses Array.sort() and innerHTML to update the DOM.
+Day/Night Mode
+CSS Variables: Define color schemes for light and dark themes.
+JavaScript: Listens for button clicks, toggles a dark-mode class on the <body> tag, and applies the respective theme.
+Responsive Design
+Media Queries: Tailored layouts for screen widths below 768px (tablet) and 480px (mobile).
+Flexbox and Grid: Ensure elements align neatly and scale appropriately.
+🚀 How to Run Locally
+Clone the Repository:
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+bash
+Copy
+Edit
+git clone https://github.com/brash83/UCDFinalProjectRepo/tree/brian-branch-2
+cd portfolio-site
+Install Dependencies: Ensure Node.js is installed, then run:
 
-Any static assets, like images, can be placed in the `public/` directory.
+bash
+Copy
+Edit
+npm install
+Run the Development Server:
 
-## 🧞 Commands
+bash
+Copy
+Edit
+npm start
+The site will be available at http://localhost:3000.
 
-All commands are run from the root of the project, from a terminal:
+Build for Production: To generate static files for deployment, run:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+bash
+Copy
+Edit
+npm run build
+🌐 Live Demo
+You can view the live site here: Brian's Portfolio
 
-## 👀 Want to learn more?
+🎯 Future Enhancements
+Backend Integration: Use a service like Node.js, Firebase, or Formspree for handling contact form submissions.
+Advanced Interactivity: Include animations using libraries like GSAP or AOS for an enhanced user experience.
+Blog Section: Add a blog page to share personal insights and technical tutorials.
+Progress Bars: Showcase skills with animated progress bars to visualize proficiency levels.
+Accessibility Improvements: Conduct a full audit to ensure WCAG compliance.
+📞 Contact Me
+Feel free to connect with me:
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Email: brian.cash@rte.ie
+GitHub: (https://github.com/brash83/)
+LinkedIn: (https://www.linkedin.com/in/brian-cash-1a845153/)
+📜 License
+This project is open-source and available under the MIT License.
+
+Thank you for visiting my portfolio site! If you have any feedback or questions, don’t hesitate to reach out. 😊
