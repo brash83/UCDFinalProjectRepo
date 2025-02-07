@@ -1,0 +1,54 @@
+---
+// about.astro
+title: "About Me";
+description: "Learn more about my background and skills.";
+gradientColor: "linear-gradient(45deg, #C4EAFF, #003244)";
+pageClass: "about-page";
+---
+
+// Import Layout here (outside of the front matter) import Layout from
+"../layouts/Layout.astro";
+
+<Layout
+  title="About Me"
+  description="Learn more about my background and skills."
+  gradientColor="linear-gradient(45deg, #C4EAFF, #003244)"
+  pageClass="about-page"
+>
+  <!-- Main Content Section -->
+  <section class="main-content">
+    <br />
+    <h3>My Journey</h3>
+    <br />
+    <p>
+      Over the last six years, I have significantly upskilled myself in various
+      areas, including solutions architecture, system management, and web
+      development, while working at RTÉ. During this time, I’ve had the
+      opportunity to lead and contribute to several impactful projects. I
+      designed and implemented an overtime dashboard using Power BI, developed
+      both a Recce Library app and a Vehicle Reservation app using Power Apps,
+      and played a key role as the technical lead in the development and
+      implementation of our 'Radio Booking System.'
+    </p>
+    <br />
+    <p>
+      These experiences have not only enhanced my technical expertise but also
+      provided me with a deeper understanding of how to create solutions that
+      drive business efficiency. The website you're currently visiting is a
+      culmination of my recent work for the Front-End Web Development studio at
+      UCD, showcasing my journey and growth as a web developer.
+    </p>
+  </section>
+
+  <p class="currently-listening">
+    <b>Currently listening to:</b>
+  </p>
+  <iframe
+    style="border-radius:12px"
+    src="https://open.spotify.com/embed/track/3wM6RTAnF7IQpMFd7b9ZcL?utm_source=generator"
+    width="50%"
+    height="175"
+    allowfullscreen="true"
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+    loading="lazy"></iframe>
+</Layout>
