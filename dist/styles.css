@@ -1,0 +1,563 @@
+/* GLOBAL STYLES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Fixedsys', monospace; /* Use Fixedsys as primary font, with monospace as fallback */
+  line-height: 1.6;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 150px;
+}
+
+h1,
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+p {
+  font-size: 1.125rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* BUTTONS */
+.cta-button {
+  padding: 0.75rem 2rem;
+  background-color: #ee8230;
+  color: white;
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: block;
+  margin: 20px auto;
+}
+
+.cta-button:hover {
+  background-color: #377bf6;
+}
+
+.cta-button-container {
+  display: flex;
+  justify-content: center; /* Center the button horizontally */
+  margin-top: 20px; /* Optional: Adjusts space above the button */
+}
+
+/* HERO SECTION */
+.hero {
+  position: relative;
+  padding: 30px 0;
+  text-align: center; /* Ensures everything inside hero is centered */
+  color: white;
+}
+
+.hero-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center; /* Ensures all content inside hero-content is centered */
+}
+
+.hero h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center; /* Center align the text */
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin-top: 1rem;
+}
+
+.cta-button {
+  display: block;
+  margin: 20px auto; /* Centers the button horizontally */
+  padding: 0.75rem 0.5rem;
+  background-color: #ee8230;
+  color: white;
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #377bf6;
+}
+
+/* NAVBAR STYLES */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  color: white;
+  position: relative;
+  z-index: 1000;
+  background-color: transparent; /* Navbar background is always transparent */
+  height: 80px; /* Ensure navbar height is fixed to avoid layout issues */
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Navbar brand container */
+.navbar-brand-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 100%; /* Ensures the container doesn't stretch vertically */
+}
+
+/* Brand text */
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 5px; /* Adds spacing between brand text and photo */
+  margin-top: 80px; /* Add this to push the text down a bit */
+}
+
+/* Profile photo styling */
+.profile-photo {
+  margin-top: 5px; /* Add some spacing from the brand text */
+  width: 130px;     /* Adjust size as needed */
+  height: 130px;    /* Ensure it's a square */
+  border-radius: 50%; /* Makes the image circular */
+  border: 2px solid white; /* Add a white border */
+  overflow: hidden; /* Ensures the image doesn't overflow */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+}
+
+.profile-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image fills the circle */
+}
+
+/* Navbar links */
+.navbar-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links .nav-link {
+  font-size: 1rem;
+  font-weight: 500;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.navbar-links .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.mode-toggle {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.mode-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* FOOTER */
+footer {
+  background-color: #333;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+footer p {
+  font-size: 1rem;
+}
+
+/* SOCIAL ICONS */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.social-icons a img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s;
+}
+
+.social-icons a:hover img {
+  transform: scale(1.1);
+}
+
+/* BUTTONS */
+button {
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 768px) {
+  /* Navbar on mobile: collapse into vertical stack */
+  .navbar-links {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    display: none;
+  }
+
+  .navbar-toggler {
+    display: block;
+  }
+
+  .navbar-toggler:checked + .navbar-collapse .navbar-links {
+    display: flex;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1.125rem;
+  }
+
+  .contact-form {
+    padding: 20px;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 1rem; /* Ensure inputs are easy to read on smaller screens */
+  }
+  .contact-form button {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+/* CONTACT FORM STYLES */
+.contact-form {
+  background-color: white; /* Light background for the form */
+  padding: 30px;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  max-width: 600px; /* Form width */
+  margin: 0 auto; /* Centers the form */
+}
+
+.contact-form h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.contact-form label {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+  display: block; /* Ensures labels stack vertically with inputs */
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%; /* Full-width for inputs and textarea */
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  box-sizing: border-box; /* Ensures padding is included in width */
+  resize: vertical; /* Allows textarea to resize vertically */
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none; /* Removes default focus outline */
+  border-color: #ee8230; /* Border color when focused */
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #ee8230;
+  color: white;
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #420875;
+}
+
+/* DARK MODE */
+body.dark-mode {
+  background-color: #121212;
+  color: #fff;
+}
+
+/* Dark Mode Hero Section */
+body.dark-mode .hero {
+  background-color: #1a1a1a;
+}
+
+/* Dark Mode Button */
+body.dark-mode .cta-button {
+  background-color: #377bf6;
+}
+
+body.dark-mode .cta-button:hover {
+  background-color: #420875;
+}
+
+/* Dark Mode for form */
+body.dark-mode .contact-form {
+  background-color: #333;
+  color: #fff;
+}
+
+body.dark-mode .contact-form input,
+body.dark-mode .contact-form textarea {
+  background-color: #444;
+  color: #fff;
+  border-color: #666;
+}
+
+body.dark-mode .contact-form button {
+  background-color: #377bf6;
+}
+
+.dark-mode .social-icons img {
+  filter: invert(1); /* Inverts colors, making black -> white */
+}
+
+.project-details ul {
+  list-style-type: disc; /* Ensures circular bullet points */
+  padding-left: 20px; /* Adds spacing to align properly */
+}
+
+.project-thumbnail {
+  width: 100px; /* Set the size of the thumbnail */
+  height: 100px; /* Set the height of the thumbnail */
+  object-fit: cover; /* Ensure the image fills the space without distorting */
+  border-radius: 10px;
+  cursor: pointer; /* Add pointer cursor to indicate that it's clickable */
+  margin: 5px; /* Add space between thumbnails */
+  transition: transform 0.3s ease; /* Smooth transition effect on hover */
+}
+
+.project-thumbnail:hover {
+  transform: scale(1.1); /* Slightly enlarge the thumbnail on hover */
+}
+
+.lightbox-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Add spacing between thumbnails */
+}
+
+.lightbox {
+  /* You can control the margin for lightbox items here */
+}
+
+/* Add keyframes for the waving animation on the emoji */
+@keyframes wave {
+  0% {
+    transform: rotate(0deg); /* Start in normal position */
+  }
+  25% {
+    transform: rotate(-15deg); /* Slightly tilt to the left */
+  }
+  50% {
+    transform: rotate(0deg); /* Return to normal position */
+  }
+  75% {
+    transform: rotate(15deg); /* Slightly tilt to the right */
+  }
+  100% {
+    transform: rotate(0deg); /* Return to normal position */
+  }
+}
+
+/* Apply the animation only to the waving emoji */
+#wave {
+  display: inline-block; /* Ensures the span behaves like an inline element */
+  animation: wave 1.5s ease-in-out infinite; /* Apply the waving animation */
+  transform-origin: bottom; /* Make it wave from the bottom */
+}
+
+/* Update the projects-list to display the links horizontally */
+.projects-list {
+  display: flex;
+  justify-content: space-between;  /* Distribute the links evenly */
+  gap: 1rem; /* Adjust the spacing between the links */
+  margin-bottom: 30px; /* Optional: Adjust bottom margin */
+}
+
+/* Optional: Additional styling for individual project links */
+.project {
+  flex: 1; /* Make the links flexible in width */
+  text-align: center; /* Ensure the text is centered inside each link */
+}
+
+.project-link {
+  display: inline-block;
+  font-size: 1.125rem;
+  padding: 12px 24px;
+  background-color: #377bf6;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s, transform 0.3s;
+  text-align: center;
+}
+
+.project-link:hover {
+  background-color: #64ea55;
+  transform: translateY(-3px);
+}
+
+.project-link:active {
+  transform: translateY(1px);
+}
+
+.project-details {
+  margin-bottom: 300px; /* Increase the margin between projects */
+}
+
+
+.currently-listening {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.currently-listening img {
+  width: 100px; /* Adjust to your preferred size */
+  height: 100px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.currently-listening {
+  font-size: 1.25rem;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.album-cover {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.currently-listening a {
+  color: #377bf6;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.currently-listening a:hover {
+  text-decoration: underline;
+}
+
+.popup-overlay {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100vw;  /* Ensures it covers the whole viewport */
+  height: 100vh; /* Ensures it covers the whole viewport */
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none; /* Hidden by default */
+  z-index: 9999;  /* Ensure it's on top */
+  align-items: center;
+  justify-content: center;
+}
+
+.popup {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  background-color: white;
+  padding: 20px;
+  overflow: auto;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.popup img {
+  width: 100%;
+  height: auto;
+}
+
+.popup button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+.popup button:hover {
+  color: red; /* Optional: change color on hover */
+}
+

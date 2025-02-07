@@ -1,0 +1,1 @@
+const t=document.getElementById("mode-toggle");if(t){let e=localStorage.getItem("dark-mode")==="true";t.textContent=e?"🌙":"🌞",t.addEventListener("click",()=>{e=!e,t.textContent=e?"🌙":"🌞",document.body.classList.toggle("dark-mode",e),localStorage.setItem("dark-mode",e.toString())})}
