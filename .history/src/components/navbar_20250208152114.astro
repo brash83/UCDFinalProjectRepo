@@ -55,25 +55,24 @@ const isMobileMenuOpen = false;
 
   .container {
     display: flex;
-    align-items: center; /* Ensures vertical alignment of brand and links */
+    align-items: center;
     width: 100%;
     justify-content: space-between;
   }
 
-  /* Lowered Navbar Brand */
   .navbar-brand {
     font-size: 1.5rem;
     font-weight: bold;
     color: white;
     text-decoration: none;
     position: relative;
-    top: 12px; /* Lowered brand text */
+    top: 5px; /* Lowered brand text */
   }
 
   /* Profile Photo Fix */
   .profile-photo {
-    width: 140px; /* Slightly larger */
-    height: 140px;
+    width: 130px; /* Ensuring it matches the white border */
+    height: 130px;
     border-radius: 50%;
     overflow: hidden;
     display: flex;
@@ -82,12 +81,11 @@ const isMobileMenuOpen = false;
     background: white; /* White border */
     padding: 5px;
     margin-left: 15px;
-    margin-top: 10px; /* Lowered further */
   }
 
   .profile-photo img {
-    width: 130px;
-    height: 130px;
+    width: 115px;
+    height: 115px;
     border-radius: 50%;
   }
 
@@ -96,7 +94,6 @@ const isMobileMenuOpen = false;
     display: flex;
     list-style: none;
     gap: 20px;
-    align-items: center; /* Ensure vertical alignment of the links */
   }
 
   .nav-link {
@@ -131,7 +128,7 @@ const isMobileMenuOpen = false;
 
   /* Fix: Adjust title & description spacing */
   .hero-content {
-    margin-top: 120px; /* Adjusted to avoid excessive space */
+    margin-top: 140px; /* Pushed further down */
     text-align: center;
   }
 
@@ -141,7 +138,7 @@ const isMobileMenuOpen = false;
 
   .hero-content p {
     font-size: 1.2rem;
-    margin-top: 10px; /* Balanced spacing */
+    margin-top: 15px; /* Extra spacing */
   }
 
   /* Mobile Styles */
@@ -173,7 +170,7 @@ const isMobileMenuOpen = false;
 
     /* Adjust spacing for smaller screens */
     .hero-content {
-      margin-top: 140px; /* Proper balance for mobile */
+      margin-top: 160px; /* Further spacing for mobile */
     }
   }
 </style>

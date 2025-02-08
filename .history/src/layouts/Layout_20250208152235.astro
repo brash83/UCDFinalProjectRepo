@@ -22,6 +22,7 @@ const { title, description, gradientColor, pageClass } = Astro.props;
     />
     <title>{title || "My Portfolio"}</title>
     <link rel="stylesheet" href="/UCDFinalProjectRepo/styles.css" />
+
     <style>
       /* Ensure the wrapper takes up full height and prevents layout shift */
       .page-wrapper {
@@ -65,8 +66,6 @@ const { title, description, gradientColor, pageClass } = Astro.props;
         justify-content: center;
         align-items: center;
         padding: 20px;
-        margin-left: 40px; /* Added margin on left */
-        margin-right: 40px; /* Added margin on right */
       }
 
       .content-container {
@@ -99,11 +98,6 @@ const { title, description, gradientColor, pageClass } = Astro.props;
 
         .hero-content p {
           font-size: 1.1rem;
-        }
-
-        main {
-          margin-left: 30px; /* Smaller margin on mobile */
-          margin-right: 30px; /* Smaller margin on mobile */
         }
       }
     </style>

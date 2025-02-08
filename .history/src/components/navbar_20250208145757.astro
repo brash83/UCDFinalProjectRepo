@@ -44,7 +44,7 @@ const isMobileMenuOpen = false;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px; /* Reduced padding for better positioning */
+    padding: 20px; /* Adjusted for better spacing */
     background: transparent;
     color: white;
     position: absolute;
@@ -55,40 +55,24 @@ const isMobileMenuOpen = false;
 
   .container {
     display: flex;
-    align-items: center; /* Ensures vertical alignment of brand and links */
+    align-items: center;
     width: 100%;
     justify-content: space-between;
   }
 
-  /* Lowered Navbar Brand */
   .navbar-brand {
     font-size: 1.5rem;
     font-weight: bold;
     color: white;
     text-decoration: none;
-    position: relative;
-    top: 12px; /* Lowered brand text */
   }
 
-  /* Profile Photo Fix */
-  .profile-photo {
-    width: 140px; /* Slightly larger */
-    height: 140px;
-    border-radius: 50%;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: white; /* White border */
-    padding: 5px;
-    margin-left: 15px;
-    margin-top: 10px; /* Lowered further */
-  }
-
+  /* Fix: Maintain profile photo size */
   .profile-photo img {
-    width: 130px;
-    height: 130px;
+    width: 80px; /* Restored original size */
+    height: 80px;
     border-radius: 50%;
+    margin-left: 15px;
   }
 
   /* Navigation Links */
@@ -96,7 +80,6 @@ const isMobileMenuOpen = false;
     display: flex;
     list-style: none;
     gap: 20px;
-    align-items: center; /* Ensure vertical alignment of the links */
   }
 
   .nav-link {
@@ -131,7 +114,7 @@ const isMobileMenuOpen = false;
 
   /* Fix: Adjust title & description spacing */
   .hero-content {
-    margin-top: 120px; /* Adjusted to avoid excessive space */
+    margin-top: 100px; /* Pushes title & description down */
     text-align: center;
   }
 
@@ -141,7 +124,7 @@ const isMobileMenuOpen = false;
 
   .hero-content p {
     font-size: 1.2rem;
-    margin-top: 10px; /* Balanced spacing */
+    margin-top: 10px;
   }
 
   /* Mobile Styles */
@@ -173,7 +156,7 @@ const isMobileMenuOpen = false;
 
     /* Adjust spacing for smaller screens */
     .hero-content {
-      margin-top: 140px; /* Proper balance for mobile */
+      margin-top: 120px;
     }
   }
 </style>

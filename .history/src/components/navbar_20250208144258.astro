@@ -44,51 +44,31 @@ const isMobileMenuOpen = false;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px; /* Reduced padding for better positioning */
-    background: transparent;
+    padding: 15px 20px;
+    background: #103b72;
     color: white;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+    position: relative;
   }
 
   .container {
     display: flex;
-    align-items: center; /* Ensures vertical alignment of brand and links */
+    align-items: center;
     width: 100%;
     justify-content: space-between;
   }
 
-  /* Lowered Navbar Brand */
   .navbar-brand {
     font-size: 1.5rem;
     font-weight: bold;
     color: white;
     text-decoration: none;
-    position: relative;
-    top: 12px; /* Lowered brand text */
-  }
-
-  /* Profile Photo Fix */
-  .profile-photo {
-    width: 140px; /* Slightly larger */
-    height: 140px;
-    border-radius: 50%;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: white; /* White border */
-    padding: 5px;
-    margin-left: 15px;
-    margin-top: 10px; /* Lowered further */
   }
 
   .profile-photo img {
-    width: 130px;
-    height: 130px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
+    margin-left: 10px;
   }
 
   /* Navigation Links */
@@ -96,7 +76,6 @@ const isMobileMenuOpen = false;
     display: flex;
     list-style: none;
     gap: 20px;
-    align-items: center; /* Ensure vertical alignment of the links */
   }
 
   .nav-link {
@@ -112,7 +91,7 @@ const isMobileMenuOpen = false;
     cursor: pointer;
   }
 
-  /* Hamburger Menu */
+  /* Mobile Menu - Hidden by default */
   .hamburger-menu {
     display: none;
     flex-direction: column;
@@ -129,21 +108,6 @@ const isMobileMenuOpen = false;
     transition: 0.3s;
   }
 
-  /* Fix: Adjust title & description spacing */
-  .hero-content {
-    margin-top: 120px; /* Adjusted to avoid excessive space */
-    text-align: center;
-  }
-
-  .hero-content h1 {
-    font-size: 2.5rem;
-  }
-
-  .hero-content p {
-    font-size: 1.2rem;
-    margin-top: 10px; /* Balanced spacing */
-  }
-
   /* Mobile Styles */
   @media (max-width: 768px) {
     .hamburger-menu {
@@ -153,9 +117,9 @@ const isMobileMenuOpen = false;
     .navbar-links {
       position: absolute;
       top: 60px;
-      left: 0;
+      right: 0;
+      background: #103b72;
       width: 100%;
-      background: inherit;
       flex-direction: column;
       align-items: center;
       display: none;
@@ -169,11 +133,6 @@ const isMobileMenuOpen = false;
     .nav-link {
       padding: 10px;
       font-size: 1.2rem;
-    }
-
-    /* Adjust spacing for smaller screens */
-    .hero-content {
-      margin-top: 140px; /* Proper balance for mobile */
     }
   }
 </style>
