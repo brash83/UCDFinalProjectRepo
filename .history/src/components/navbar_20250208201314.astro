@@ -1,0 +1,192 @@
+---
+const { title, description } = Astro.props;
+---
+
+<nav class="navbar">
+  <div class="container">
+    <!-- Navigation Links (Right-Aligned) -->
+    <div class="nav-right">
+      <ul class="navbar-links" id="navbar-links">
+        <li><a href="/UCDFinalProjectRepo/" class="nav-link">Home</a></li>
+        <li><a href="/UCDFinalProjectRepo/about" class="nav-link">About</a></li>
+        <li>
+          <a href="/UCDFinalProjectRepo/projects" class="nav-link">Projects</a>
+        </li>
+        <li>
+          <a href="/UCDFinalProjectRepo/contact" class="nav-link">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a href="/UCDFinalProjectRepo/CV.pdf" class="nav-link" download
+            >My CV</a
+          >
+        </li>
+      </ul>
+      <button id="mode-toggle" class="mode-toggle">🌙</button>
+    </div>
+
+    <!-- Hamburger Menu Button (Mobile) -->
+    <button id="menu-toggle" class="hamburger-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-left">
+      <a class="navbar-brand" href="/">Brian Cash</a>
+      <div class="profile-photo">
+        <img src="/UCDFinalProjectRepo/images/me.jpg" alt="Profile Photo" />
+      </div>
+    </div>
+    <div class="hero-text">
+      <h1>{title}</h1>
+      <p>{description}</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* NAVBAR STYLES */
+  .navbar {
+    display: flex;
+    justify-content: flex-end; /* Push to top-right */
+    align-items: center;
+    padding: 10px 20px;
+    background: transparent;
+    color: white;
+    position: absolute;
+    top: 5px; /* Small margin */
+    right: 0;
+    width: 100%;
+  }
+
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .navbar-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    align-items: center;
+    margin-top: 0px; /* Near top */
+  }
+
+  .nav-link {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+  }
+
+  .mode-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  /* HERO CONTENT */
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px; /* Title and description pushed down */
+    text-align: center;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+  }
+
+  .profile-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    padding: 4px;
+  }
+
+  .profile-photo img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+  }
+
+  /* HAMBURGER MENU */
+  .hamburger-menu {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
+
+  .hamburger-menu span {
+    width: 30px;
+    height: 3px;
+    background: white;
+    transition: 0.3s;
+  }
+
+  /* MOBILE NAV MENU */
+  @media (max-width: 768px) {
+    .hamburger-menu {
+      display: flex;
+    }
+
+    .nav-right {
+      display: none; /* Hide nav in mobile */
+    }
+
+    .navbar-links {
+      position: absolute;
+      top: 60px;
+      right: 0;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      display: none;
+      padding: 15px 0;
+      background: var(--hero-gradient); /* Inherit hero gradient */
+      backdrop-filter: blur(10px);
+    }
+
+    .navbar-links.show {
+      display: flex;
+    }
+  }
+</style>
+
+<script>
+  // Hamburger Menu Toggle
+  const menuToggle = document.getElementById("menu-toggle");
+  const navbarLinks = document.querySelector("#navbar-links");
+
+  if (menuToggle && navbarLinks) {
+    menuToggle.addEventListener("click", () => {
+      navbarLinks.classList.toggle("show");
+    });
+  }
+</script>

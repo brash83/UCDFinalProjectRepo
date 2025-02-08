@@ -37,19 +37,19 @@ a {
 
 /* BUTTONS */
 .cta-button {
-  padding: 0.5rem 1rem; 
+  padding: 0.5rem 1rem; /* Reduce padding for a more compact size */
   background-color: #103B72;
   color: white;
   font-size: 1.125rem;
   text-transform: uppercase;
   border: none;
-  border-radius: 25px; /* More rounded corners */
+  border-radius: 15px; /* More rounded corners */
   cursor: pointer;
   transition: background-color 0.3s;
-  display: inline-block; 
+  display: inline-block; /* Keeps it only as wide as the text */
   margin: 20px auto;
   text-align: center;
-  white-space: nowrap; 
+  white-space: nowrap; /* Prevents the text from wrapping */
 }
 
 .cta-button:hover {
@@ -58,8 +58,8 @@ a {
 
 .cta-button-container {
   display: flex;
-  justify-content: center; 
-  margin-top: 20px; 
+  justify-content: center; /* Center the button horizontally */
+  margin-top: 20px; /* Optional: Adjusts space above the button */
 }
 
 
@@ -67,14 +67,14 @@ a {
 .hero {
   position: relative;
   padding: 30px 0;
-  text-align: center; 
+  text-align: center; /* Ensures everything inside hero is centered */
   color: white;
 }
 
 .hero-content {
   max-width: 1100px;
   margin: 0 auto;
-  text-align: center; 
+  text-align: center; /* Ensures all content inside hero-content is centered */
 }
 
 .hero h2 {
@@ -97,8 +97,8 @@ npm
   color: white;
   position: relative;
   z-index: 1000;
-  background-color: transparent; 
-  height: 80px; 
+  background-color: transparent; /* Navbar background is always transparent */
+  height: 80px; /* Ensure navbar height is fixed to avoid layout issues */
 }
 
 .navbar .container {
@@ -106,6 +106,41 @@ npm
   align-items: center;
   justify-content: space-between;
   width: 100%;
+}
+
+/* Navbar brand container */
+.navbar-brand-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 100%; /* Ensures the container doesn't stretch vertically */
+}
+
+/* Brand text */
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 5px; /* Adds spacing between brand text and photo */
+  margin-top: 80px; /* Add this to push the text down a bit */
+}
+
+/* Profile photo styling */
+.profile-photo {
+  margin-top: 5px; /* Add some spacing from the brand text */
+  width: 130px;     /* Adjust size as needed */
+  height: 130px;    /* Ensure it's a square */
+  border-radius: 50%; /* Makes the image circular */
+  border: 2px solid white; /* Add a white border */
+  overflow: hidden; /* Ensures the image doesn't overflow */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+}
+
+.profile-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image fills the circle */
 }
 
 /* Navbar links */

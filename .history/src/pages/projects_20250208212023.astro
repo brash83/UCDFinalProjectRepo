@@ -5,7 +5,7 @@ import Layout from "../layouts/Layout.astro";
 <Layout
   title="Projects"
   description="Check out some of the projects I have worked on."
-  gradientColor="linear-gradient(45deg, #BCFFCC, #103B72)"
+  gradientColor="linear-gradient(45deg, #BCFFCC, #002C5F)"
   pageClass="projects-page"
 >
   <!-- Style for Red & Green Circles -->
@@ -90,16 +90,16 @@ import Layout from "../layouts/Layout.astro";
   <!-- Projects Navigation List (Buttons) -->
   <section class="projects-list">
     <div class="project">
-      <a href="#project1" class="project-link">Recce Library App</a>
+      <a href="#project1" class="project-link">Recce Library</a>
     </div>
     <div class="project">
       <a href="#project2" class="project-link">Overtime Dashboard</a>
     </div>
     <div class="project">
-      <a href="#project3" class="project-link">Vehicle Bookings App</a>
+      <a href="#project3" class="project-link">Vehicle Reservations</a>
     </div>
     <div class="project">
-      <a href="#project4" class="project-link">Operations GDPR Bot</a>
+      <a href="#project4" class="project-link">Operations Bot</a>
     </div>
   </section>
   <br />
@@ -108,7 +108,7 @@ import Layout from "../layouts/Layout.astro";
   <br />
   <br />
   <br />
-
+  <!-- Project 1: Recce Library App -->
   <section class="project-details" id="project1">
     <div class="project-detail-left">
       <h1 class="project-title">Recce Library App</h1>
@@ -164,6 +164,7 @@ import Layout from "../layouts/Layout.astro";
     <a href="#top" class="scroll-to-top">&#8593; Back to Top</a>
   </section>
 
+  <!-- Project 2: Overtime Dashboard -->
   <section class="project-details" id="project2">
     <div class="project-detail-left">
       <h1 class="project-title">Overtime Dashboard</h1>
@@ -210,6 +211,7 @@ import Layout from "../layouts/Layout.astro";
     <a href="#top" class="scroll-to-top">&#8593; Back to Top</a>
   </section>
 
+  <!-- Project 3: Vehicle Reservations App -->
   <section class="project-details" id="project3">
     <div class="project-detail-left">
       <h1 class="project-title">Vehicle Reservations App</h1>
@@ -260,6 +262,7 @@ import Layout from "../layouts/Layout.astro";
     <a href="#top" class="scroll-to-top">&#8593; Back to Top</a>
   </section>
 
+  <!-- Project 4: Operations Bot -->
   <section class="project-details" id="project4">
     <div class="project-detail-left">
       <h1 class="project-title">Operations Bot へ[ ᴼ ▃ ᴼ ]_/¯</h1>
@@ -300,6 +303,7 @@ import Layout from "../layouts/Layout.astro";
     <a href="#top" class="scroll-to-top">&#8593; Back to Top</a>
   </section>
 
+  <!-- Lightbox Popup -->
   <div id="popupOverlay" class="popup-overlay">
     <div class="popup">
       <button class="close-btn">&times;</button>
@@ -307,6 +311,7 @@ import Layout from "../layouts/Layout.astro";
     </div>
   </div>
 
+  <!-- JavaScript -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const images = document.querySelectorAll(".project-thumbnail");
@@ -325,6 +330,7 @@ import Layout from "../layouts/Layout.astro";
         });
       });
 
+      // Close button functionality
       const closeButton = document.querySelector(".close-btn");
       const popupOverlay = document.getElementById("popupOverlay");
 
@@ -334,6 +340,7 @@ import Layout from "../layouts/Layout.astro";
         });
       }
 
+      // Close the overlay if clicked outside the image
       if (popupOverlay) {
         popupOverlay.addEventListener("click", (event) => {
           if (event.target === popupOverlay) {

@@ -28,7 +28,6 @@ const { title, description } = Astro.props;
           >
         </li>
       </ul>
-      <!-- Mode Toggle Button -->
       <button id="mode-toggle" class="mode-toggle">🌙</button>
     </div>
 
@@ -64,7 +63,6 @@ const { title, description } = Astro.props;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 999;
   }
 
   .container {
@@ -155,96 +153,82 @@ const { title, description } = Astro.props;
     font-size: 1.2rem;
   }
 
-  /* HAMBURGER MENU */
-  .hamburger-menu {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    background: none;
-    border: none;
-    z-index: 1001;
+  /* Navbar styling for hamburger menu */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    color: white;
+    position: relative;
+    z-index: 1000;
+    background-color: transparent; /* Set background to transparent or gradient */
+    height: 80px;
   }
 
-  .hamburger-menu span {
-    width: 30px;
-    height: 3px;
-    background: white;
-    transition: 0.3s;
+  /* When the hamburger is clicked and links are shown */
+  .navbar-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-direction: column; /* Stack vertically on small screens */
+    background: linear-gradient(
+      to bottom,
+      #103b72,
+      #377bf6
+    ); /* Inherited gradient for the background */
+    position: absolute; /* Position it below the navbar */
+    top: 80px; /* Adjust to place below navbar */
+    right: 0;
+    width: 100%;
+    padding: 1rem 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for depth */
+    display: none; /* Hide by default */
+    text-align: center;
   }
 
-  /* MOBILE NAV */
+  /* Navbar links within the hamburger menu */
+  .navbar-links .nav-link {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: white; /* White text for the links */
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s;
+    display: block; /* Make links block level to fill the width */
+  }
+
+  /* When hovering over the links */
+  .navbar-links .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Light hover effect */
+  }
+
+  /* Toggler (hamburger icon) for mobile */
+  .navbar-toggler {
+    display: none; /* Hide the default toggle button */
+  }
+
+  /* Mobile media query: Adjust when screen is small */
   @media (max-width: 768px) {
-    .hamburger-menu {
-      display: flex;
-      position: absolute;
-      top: 20px; /* Added this to ensure it's not cut off */
-      right: 20px;
-    }
-
-    .navbar-links {
-      position: absolute;
-      top: 60px;
-      right: 0;
-      width: 100%;
-      flex-direction: column;
-      align-items: flex-end; /* Aligns the links to the right */
-      display: none;
-      padding: 15px 0;
-      background: #103b72;
-      backdrop-filter: blur(10px);
-      transition: all 0.3s ease; /* Smooth transition */
-    }
-
-    .navbar-links.show {
-      display: flex;
-      width: 250px; /* Expanded width for the background */
-    }
-
-    .nav-link {
+    .navbar-toggler {
+      display: block; /* Show the hamburger icon on mobile */
+      cursor: pointer;
+      background: transparent;
+      border: none;
+      font-size: 2rem;
       color: white;
-      padding: 10px 0;
-      text-align: right; /* Aligns text to the right */
     }
 
-    /* Responsively adjust profile photo and title/description */
-    .hero-left {
-      left: 10%;
-      top: 60%;
-      transform: translateY(-60%);
+    /* Show navbar links when hamburger is clicked */
+    .navbar-toggler:checked + .navbar-collapse .navbar-links {
+      display: flex;
     }
 
-    .profile-photo {
-      width: 140px;
-      height: 140px;
+    /* Hide the navbar links on mobile by default */
+    .navbar-links {
+      display: none;
     }
-
-    .profile-photo img {
-      width: 130px;
-      height: 130px;
-    }
-
-    .hero-text h1 {
-      font-size: 1.8rem;
-    }
-
-    .hero-text p {
-      font-size: 1rem;
-    }
-  }
-
-  /* DAY/NIGHT MODE */
-  body.dark-mode {
-    background-color: #121212;
-    color: white;
-  }
-
-  body.dark-mode .navbar {
-    background-color: #333;
-  }
-
-  body.dark-mode .mode-toggle {
-    color: white;
   }
 </style>
 
@@ -256,17 +240,6 @@ const { title, description } = Astro.props;
   if (menuToggle && navbarLinks) {
     menuToggle.addEventListener("click", () => {
       navbarLinks.classList.toggle("show");
-    });
-  }
-
-  // Day/Night Mode Toggle
-  const modeToggle = document.getElementById("mode-toggle");
-
-  if (modeToggle) {
-    modeToggle.addEventListener("click", () => {
-      document.body.classList.toggle("dark-mode");
-      const icon = document.body.classList.contains("dark-mode") ? "🌞" : "🌙";
-      modeToggle.textContent = icon;
     });
   }
 </script>

@@ -1,0 +1,19 @@
+---
+import { useState } from "react";
+---
+
+<nav class="navbar">
+  <div class="container">
+    <a href="/" class="logo">MyLogo</a>
+    <input type="checkbox" class="navbar-toggler" id="navbar-toggler" />
+    <div class="navbar-collapse">
+      <ul class="navbar-links">
+        <li><a href="/" class="nav-link">Home</a></li>
+        <li><a href="/about" class="nav-link">About</a></li>
+        <li><a href="/projects" class="nav-link">Projects</a></li>
+        <li><a href="/contact" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+    <button class="mode-toggle" onClick={() => toggleTheme()}>🌙</button>
+  </div>
+</nav>

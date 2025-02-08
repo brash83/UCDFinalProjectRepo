@@ -5,7 +5,7 @@ import Layout from "../layouts/Layout.astro";
 <Layout
   title="Contact Me"
   description="Feel free to reach out for inquiries or just to say hi!"
-  gradientColor="linear-gradient(45deg, #FCD38C, #103B72)"
+  gradientColor="linear-gradient(45deg, #FCD38C, #420875)"
   pageClass="contact-page"
 >
   <section class="contact-form container mt-5">
@@ -58,6 +58,7 @@ import Layout from "../layouts/Layout.astro";
     <div id="form-message" class="mt-3 text-center"></div>
   </section>
 
+  <!-- Social Icons Section -->
   <div class="social-icons">
     <a
       href="https://github.com/brash83/"
@@ -135,8 +136,10 @@ import Layout from "../layouts/Layout.astro";
           isValid = false;
         }
 
+        // If validation fails, stop form submission
         if (!isValid) return;
 
+        // Send form data to Formspree
         const formData = new FormData(event.target as HTMLFormElement);
         fetch((event.target as HTMLFormElement).action, {
           method: "POST",

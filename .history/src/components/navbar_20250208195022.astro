@@ -1,0 +1,196 @@
+---
+const { title, description } = Astro.props;
+---
+
+<nav class="navbar">
+  <div class="container">
+    <!-- Navigation Links at the Top -->
+    <ul class="navbar-links" id="navbar-links">
+      <li><a href="/UCDFinalProjectRepo/" class="nav-link">Home</a></li>
+      <li><a href="/UCDFinalProjectRepo/about" class="nav-link">About</a></li>
+      <li>
+        <a href="/UCDFinalProjectRepo/projects" class="nav-link">Projects</a>
+      </li>
+      <li>
+        <a href="/UCDFinalProjectRepo/contact" class="nav-link">Contact</a>
+      </li>
+      <li class="nav-item">
+        <a href="/UCDFinalProjectRepo/CV.pdf" class="nav-link" download>My CV</a
+        >
+      </li>
+    </ul>
+
+    <!-- Profile and Brand Name -->
+    <div class="navbar-brand-container">
+      <a class="navbar-brand" href="/">Brian Cash</a>
+      <div class="profile-photo">
+        <img src="/UCDFinalProjectRepo/images/me.jpg" alt="Profile Photo" />
+      </div>
+    </div>
+
+    <!-- Hamburger Menu Button -->
+    <button id="menu-toggle" class="hamburger-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <button id="mode-toggle" class="mode-toggle">🌙</button>
+  </div>
+</nav>
+
+<style>
+  /* NAVBAR STYLES */
+  .navbar {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;
+    padding: 20px 20px 10px; /* Add some space on top */
+    background: transparent;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column; /* Stack elements */
+    align-items: center;
+    width: 100%;
+  }
+
+  /* NAV LINKS */
+  .navbar-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 20px; /* Space below links */
+  }
+
+  .nav-link {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+  }
+
+  /* PROFILE & BRAND POSITIONING */
+  .navbar-brand-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -10px; /* Move up */
+  }
+
+  .navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+  }
+
+  .profile-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    padding: 4px;
+    margin-top: -15px; /* Move up */
+  }
+
+  .profile-photo img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+  }
+
+  /* BUTTON STYLES */
+  .mode-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-top: 10px; /* Space below */
+  }
+
+  .hamburger-menu {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
+
+  .hamburger-menu span {
+    width: 30px;
+    height: 3px;
+    background: white;
+    transition: 0.3s;
+  }
+
+  /* HERO CONTENT ADJUSTMENTS */
+  .hero-content {
+    margin-top: 40px; /* More space after navbar */
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+
+  /* MOBILE STYLES */
+  @media (max-width: 768px) {
+    .hamburger-menu {
+      display: flex;
+    }
+
+    .navbar-links {
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background: inherit;
+      flex-direction: column;
+      align-items: center;
+      display: none;
+      padding: 15px 0;
+    }
+
+    .navbar-links.show {
+      display: flex;
+    }
+
+    .nav-link {
+      padding: 10px;
+      font-size: 1.2rem;
+    }
+
+    .hero-content {
+      margin-top: 60px; /* Proper spacing for mobile */
+    }
+  }
+</style>
+
+<script>
+  // Hamburger Menu Toggle
+  const menuToggle = document.getElementById("menu-toggle");
+  const navbarLinks = document.querySelector("#navbar-links");
+
+  if (menuToggle && navbarLinks) {
+    menuToggle.addEventListener("click", () => {
+      navbarLinks.classList.toggle("show");
+    });
+  }
+</script>

@@ -6,6 +6,7 @@ const { title, description } = Astro.props;
   <div class="container">
     <!-- Left Side: Name & Profile -->
     <div class="hero-left">
+      <a class="navbar-brand" href="/">Brian Cash</a>
       <div class="profile-photo">
         <img src="/UCDFinalProjectRepo/images/me.jpg" alt="Profile Photo" />
       </div>
@@ -28,7 +29,6 @@ const { title, description } = Astro.props;
           >
         </li>
       </ul>
-      <!-- Mode Toggle Button -->
       <button id="mode-toggle" class="mode-toggle">🌙</button>
     </div>
 
@@ -52,19 +52,31 @@ const { title, description } = Astro.props;
 </section>
 
 <style>
+  /* GLOBAL STYLES */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Fixedsys", monospace;
+    line-height: 1.6;
+    background-color: #f5f5f5;
+    color: #333;
+  }
+
   /* NAVBAR */
   .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    background: transparent;
+    padding: 1rem;
+    position: relative;
+    z-index: 1000;
     color: white;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 999;
+    background-color: transparent;
+    height: 80px;
   }
 
   .container {
@@ -74,71 +86,85 @@ const { title, description } = Astro.props;
     width: 100%;
   }
 
-  /* Left Side: Profile */
+  /* Left Side: Profile and Name */
   .hero-left {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     position: absolute;
     left: 5%;
-    top: 50%;
+    top: 40%; /* Adjusted for more downward space */
     transform: translateY(-50%);
   }
 
+  .navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 10px; /* Adjust for spacing */
+  }
+
   .profile-photo {
-    width: 180px;
-    height: 180px;
+    margin-top: 20px; /* Adjusted to move it down more */
+    width: 130px;
+    height: 130px;
     border-radius: 50%;
+    border: 2px solid white;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: white;
-    padding: 4px;
-    margin-top: 250px; /* Added margin to move profile photo down */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   }
 
   .profile-photo img {
-    width: 175px;
-    height: 175px;
-    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
-  /* Right Side: Nav Links */
+  /* Right Side: Navbar Links */
   .nav-right {
     display: flex;
     align-items: center;
     gap: 20px;
     position: absolute;
     right: 5%;
-    top: 15px; /* Adjusted top position */
   }
 
   .navbar-links {
     display: flex;
+    gap: 1.5rem;
     list-style: none;
-    gap: 20px;
+    margin: 0;
+    padding: 0;
   }
 
   .nav-link {
-    text-decoration: none;
-    color: white;
     font-size: 1rem;
+    font-weight: 500;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+
+  .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
   }
 
   .mode-toggle {
-    background: none;
+    background: transparent;
     border: none;
-    font-size: 1.5rem;
+    color: white;
+    font-size: 1.2rem;
     cursor: pointer;
   }
 
-  /* HERO */
+  /* Hero Section */
   .hero {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 10vh;
+    height: 15vh;
     text-align: center;
   }
 
@@ -148,7 +174,6 @@ const { title, description } = Astro.props;
 
   .hero-text h1 {
     font-size: 2.5rem;
-    margin-bottom: 10px;
   }
 
   .hero-text p {
@@ -163,7 +188,6 @@ const { title, description } = Astro.props;
     cursor: pointer;
     background: none;
     border: none;
-    z-index: 1001;
   }
 
   .hamburger-menu span {
@@ -173,78 +197,33 @@ const { title, description } = Astro.props;
     transition: 0.3s;
   }
 
-  /* MOBILE NAV */
+  /* Mobile Navbar */
   @media (max-width: 768px) {
     .hamburger-menu {
       display: flex;
       position: absolute;
-      top: 20px; /* Added this to ensure it's not cut off */
-      right: 20px;
+      right: 20px; /* Hamburger positioned on the right */
     }
 
     .navbar-links {
       position: absolute;
-      top: 60px;
+      top: 50px;
       right: 0;
       width: 100%;
       flex-direction: column;
-      align-items: flex-end; /* Aligns the links to the right */
+      align-items: center;
       display: none;
-      padding: 15px 0;
-      background: #103b72;
-      backdrop-filter: blur(10px);
-      transition: all 0.3s ease; /* Smooth transition */
+      background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
     }
 
     .navbar-links.show {
       display: flex;
-      width: 250px; /* Expanded width for the background */
     }
 
     .nav-link {
       color: white;
-      padding: 10px 0;
-      text-align: right; /* Aligns text to the right */
+      padding: 1rem; /* Added padding for better click area */
     }
-
-    /* Responsively adjust profile photo and title/description */
-    .hero-left {
-      left: 10%;
-      top: 60%;
-      transform: translateY(-60%);
-    }
-
-    .profile-photo {
-      width: 140px;
-      height: 140px;
-    }
-
-    .profile-photo img {
-      width: 130px;
-      height: 130px;
-    }
-
-    .hero-text h1 {
-      font-size: 1.8rem;
-    }
-
-    .hero-text p {
-      font-size: 1rem;
-    }
-  }
-
-  /* DAY/NIGHT MODE */
-  body.dark-mode {
-    background-color: #121212;
-    color: white;
-  }
-
-  body.dark-mode .navbar {
-    background-color: #333;
-  }
-
-  body.dark-mode .mode-toggle {
-    color: white;
   }
 </style>
 
@@ -256,17 +235,6 @@ const { title, description } = Astro.props;
   if (menuToggle && navbarLinks) {
     menuToggle.addEventListener("click", () => {
       navbarLinks.classList.toggle("show");
-    });
-  }
-
-  // Day/Night Mode Toggle
-  const modeToggle = document.getElementById("mode-toggle");
-
-  if (modeToggle) {
-    modeToggle.addEventListener("click", () => {
-      document.body.classList.toggle("dark-mode");
-      const icon = document.body.classList.contains("dark-mode") ? "🌞" : "🌙";
-      modeToggle.textContent = icon;
     });
   }
 </script>

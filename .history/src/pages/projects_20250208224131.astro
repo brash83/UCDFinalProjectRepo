@@ -307,6 +307,7 @@ import Layout from "../layouts/Layout.astro";
     </div>
   </div>
 
+  <!-- JavaScript -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const images = document.querySelectorAll(".project-thumbnail");
@@ -325,6 +326,7 @@ import Layout from "../layouts/Layout.astro";
         });
       });
 
+      // Close button functionality
       const closeButton = document.querySelector(".close-btn");
       const popupOverlay = document.getElementById("popupOverlay");
 
@@ -334,6 +336,7 @@ import Layout from "../layouts/Layout.astro";
         });
       }
 
+      // Close the overlay if clicked outside the image
       if (popupOverlay) {
         popupOverlay.addEventListener("click", (event) => {
           if (event.target === popupOverlay) {

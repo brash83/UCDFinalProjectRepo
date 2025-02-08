@@ -108,6 +108,41 @@ npm
   width: 100%;
 }
 
+/* Navbar brand container */
+.navbar-brand-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 100%; /* Ensures the container doesn't stretch vertically */
+}
+
+/* Brand text */
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 5px; /* Adds spacing between brand text and photo */
+  margin-top: 80px; /* Add this to push the text down a bit */
+}
+
+/* Profile photo styling */
+.profile-photo {
+  margin-top: 5px; /* Add some spacing from the brand text */
+  width: 130px;     /* Adjust size as needed */
+  height: 130px;    /* Ensure it's a square */
+  border-radius: 50%; /* Makes the image circular */
+  border: 2px solid white; /* Add a white border */
+  overflow: hidden; /* Ensures the image doesn't overflow */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+}
+
+.profile-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image fills the circle */
+}
+
 /* Navbar links */
 .navbar-links {
   display: flex;

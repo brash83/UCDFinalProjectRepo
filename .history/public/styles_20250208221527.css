@@ -87,7 +87,8 @@ a {
   font-size: 1.25rem;
   margin-top: 1rem;
 }
-npm
+
+
 /* NAVBAR STYLES */
 .navbar {
   display: flex;
@@ -97,8 +98,8 @@ npm
   color: white;
   position: relative;
   z-index: 1000;
-  background-color: transparent; 
-  height: 80px; 
+  background-color: transparent;
+  height: 80px;
 }
 
 .navbar .container {
@@ -384,130 +385,5 @@ body.dark-mode .contact-form button {
 /* Apply the animation only to the waving emoji */
 #wave {
   display: inline-block; /* Ensures the span behaves like an inline element */
-  animation: wave 1.5s ease-in-out infinite; /* Apply the waving animation */
-  transform-origin: bottom; /* Make it wave from the bottom */
+  animation: wave 1s infinite; /* Infinite wave animation */
 }
-
-/* Update the projects-list to display the links horizontally */
-.projects-list {
-  display: flex;
-  justify-content: space-between;  /* Distribute the links evenly */
-  gap: 1rem; /* Adjust the spacing between the links */
-  margin-bottom: 30px; /* Optional: Adjust bottom margin */
-}
-
-/* Optional: Additional styling for individual project links */
-.project {
-  flex: 1; /* Make the links flexible in width */
-  text-align: center; /* Ensure the text is centered inside each link */
-}
-
-.project-link {
-  display: inline-block;
-  font-size: 1.125rem;
-  padding: 12px 24px;
-  background-color: #377bf6;
-  color: white;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: background-color 0.3s, transform 0.3s;
-  text-align: center;
-}
-
-.project-link:hover {
-  background-color: #64ea55;
-  transform: translateY(-3px);
-}
-
-.project-link:active {
-  transform: translateY(1px);
-}
-
-.project-details {
-  margin-bottom: 300px; /* Increase the margin between projects */
-}
-
-
-.currently-listening {
-  text-align: center;
-  margin: 30px 0;
-}
-
-.currently-listening img {
-  width: 100px; /* Adjust to your preferred size */
-  height: 100px;
-  border-radius: 8px;
-  margin-bottom: 10px;
-}
-
-.currently-listening {
-  font-size: 1.25rem;
-  font-family: 'Arial', sans-serif;
-  color: #333;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.album-cover {
-  width: 40px;
-  height: 40px;
-  border-radius: 4px;
-  object-fit: cover;
-}
-
-.currently-listening a {
-  color: #377bf6;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.currently-listening a:hover {
-  text-decoration: underline;
-}
-
-.popup-overlay {
-  position: fixed; 
-  top: 0;
-  left: 0;
-  width: 100vw;  /* Ensures it covers the whole viewport */
-  height: 100vh; /* Ensures it covers the whole viewport */
-  background-color: rgba(0, 0, 0, 0.5);
-  display: none; /* Hidden by default */
-  z-index: 9999;  /* Ensure it's on top */
-  align-items: center;
-  justify-content: center;
-}
-
-.popup {
-  position: relative;
-  max-width: 90%;
-  max-height: 90%;
-  background-color: white;
-  padding: 20px;
-  overflow: auto;
-  border-radius: 8px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.popup img {
-  width: 100%;
-  height: auto;
-}
-
-.popup button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: transparent;
-  border: none;
-  color: white;
-  font-size: 1.5rem;
-  cursor: pointer;
-  z-index: 10000;
-}
-
-.popup button:hover {
-  color: red; /* Optional: change color on hover */
-}
-

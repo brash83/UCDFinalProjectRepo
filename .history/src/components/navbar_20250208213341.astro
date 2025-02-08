@@ -28,8 +28,6 @@ const { title, description } = Astro.props;
           >
         </li>
       </ul>
-      <!-- Mode Toggle Button -->
-      <button id="mode-toggle" class="mode-toggle">🌙</button>
     </div>
 
     <!-- Hamburger Menu (Mobile) -->
@@ -191,14 +189,12 @@ const { title, description } = Astro.props;
       align-items: flex-end; /* Aligns the links to the right */
       display: none;
       padding: 15px 0;
-      background: #103b72;
+      background: rgba(0, 0, 0, 0.7); /* Background color with opacity */
       backdrop-filter: blur(10px);
-      transition: all 0.3s ease; /* Smooth transition */
     }
 
     .navbar-links.show {
       display: flex;
-      width: 250px; /* Expanded width for the background */
     }
 
     .nav-link {
@@ -206,45 +202,6 @@ const { title, description } = Astro.props;
       padding: 10px 0;
       text-align: right; /* Aligns text to the right */
     }
-
-    /* Responsively adjust profile photo and title/description */
-    .hero-left {
-      left: 10%;
-      top: 60%;
-      transform: translateY(-60%);
-    }
-
-    .profile-photo {
-      width: 140px;
-      height: 140px;
-    }
-
-    .profile-photo img {
-      width: 130px;
-      height: 130px;
-    }
-
-    .hero-text h1 {
-      font-size: 1.8rem;
-    }
-
-    .hero-text p {
-      font-size: 1rem;
-    }
-  }
-
-  /* DAY/NIGHT MODE */
-  body.dark-mode {
-    background-color: #121212;
-    color: white;
-  }
-
-  body.dark-mode .navbar {
-    background-color: #333;
-  }
-
-  body.dark-mode .mode-toggle {
-    color: white;
   }
 </style>
 
@@ -256,17 +213,6 @@ const { title, description } = Astro.props;
   if (menuToggle && navbarLinks) {
     menuToggle.addEventListener("click", () => {
       navbarLinks.classList.toggle("show");
-    });
-  }
-
-  // Day/Night Mode Toggle
-  const modeToggle = document.getElementById("mode-toggle");
-
-  if (modeToggle) {
-    modeToggle.addEventListener("click", () => {
-      document.body.classList.toggle("dark-mode");
-      const icon = document.body.classList.contains("dark-mode") ? "🌞" : "🌙";
-      modeToggle.textContent = icon;
     });
   }
 </script>

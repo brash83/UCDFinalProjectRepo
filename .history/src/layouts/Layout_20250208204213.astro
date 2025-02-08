@@ -30,6 +30,7 @@ const { title, description, gradientColor, pageClass } = Astro.props;
         min-height: 100vh;
       }
 
+      /* Hero section with balanced height */
       .hero {
         display: flex;
         flex-direction: column;
@@ -64,8 +65,8 @@ const { title, description, gradientColor, pageClass } = Astro.props;
         justify-content: center;
         align-items: center;
         padding: 20px;
-        margin-left: 60px;
-        margin-right: 60px;
+        margin-left: 60px; /* Added margin on left */
+        margin-right: 60px; /* Added margin on right */
       }
 
       .content-container {

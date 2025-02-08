@@ -1,0 +1,187 @@
+---
+const { title, description } = Astro.props;
+---
+
+<nav class="navbar">
+  <div class="container">
+    <div class="navbar-brand-container">
+      <a class="navbar-brand" href="/">Brian Cash</a>
+      <div class="profile-photo">
+        <img src="/UCDFinalProjectRepo/images/me.jpg" alt="Profile Photo" />
+      </div>
+    </div>
+
+    <!-- Hamburger Menu Button -->
+    <button id="menu-toggle" class="hamburger-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Navigation Links -->
+    <ul class="navbar-links" id="navbar-links">
+      <li><a href="/UCDFinalProjectRepo/" class="nav-link">Home</a></li>
+      <li><a href="/UCDFinalProjectRepo/about" class="nav-link">About</a></li>
+      <li>
+        <a href="/UCDFinalProjectRepo/projects" class="nav-link">Projects</a>
+      </li>
+      <li>
+        <a href="/UCDFinalProjectRepo/contact" class="nav-link">Contact</a>
+      </li>
+      <li class="nav-item">
+        <a href="/UCDFinalProjectRepo/CV.pdf" class="nav-link" download>My CV</a
+        >
+      </li>
+    </ul>
+
+    <button id="mode-toggle" class="mode-toggle">🌙</button>
+  </div>
+</nav>
+
+<style>
+  /* Base Navbar Styles */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px; /* Reduced padding for better positioning */
+    background: transparent;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .container {
+    display: flex;
+    align-items: center; /* Ensures vertical alignment of brand and links */
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  /* Lowered Navbar Brand */
+  .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    position: relative;
+    top: 12px; /* Lowered brand text */
+  }
+
+  .profile-photo {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    padding: 5px;
+    margin-left: 15px;
+    margin-top: 10px;
+  }
+
+  .profile-photo img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+  }
+
+  .navbar-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .nav-link {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+  }
+
+  .mode-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  .hamburger-menu {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
+
+  .hamburger-menu span {
+    width: 30px;
+    height: 3px;
+    background: white;
+    transition: 0.3s;
+  }
+
+  /* Fix: Adjust title & description spacing */
+  .hero-content {
+    margin-top: 120px;
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+
+  /* Mobile Styles */
+  @media (max-width: 768px) {
+    .hamburger-menu {
+      display: flex;
+    }
+
+    .navbar-links {
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background: inherit;
+      flex-direction: column;
+      align-items: center;
+      display: none;
+      padding: 15px 0;
+    }
+
+    .navbar-links.show {
+      display: flex;
+    }
+
+    .nav-link {
+      padding: 10px;
+      font-size: 1.2rem;
+    }
+
+    .hero-content {
+      margin-top: 140px; /* Proper balance for mobile */
+    }
+  }
+</style>
+
+<script>
+  // Hamburger Menu Toggle
+  const menuToggle = document.getElementById("menu-toggle");
+  const navbarLinks = document.querySelector("#navbar-links");
+
+  if (menuToggle && navbarLinks) {
+    menuToggle.addEventListener("click", () => {
+      navbarLinks.classList.toggle("show");
+    });
+  }
+</script>
