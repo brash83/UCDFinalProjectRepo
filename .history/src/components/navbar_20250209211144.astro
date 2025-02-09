@@ -29,6 +29,7 @@ const { title, description } = Astro.props;
         </li>
       </ul>
 
+      <!-- Mode Toggle for Desktop -->
       <button id="mode-toggle" class="mode-toggle">🌙</button>
     </div>
 
@@ -38,6 +39,27 @@ const { title, description } = Astro.props;
       <span></span>
       <span></span>
     </button>
+  </div>
+
+  <!-- Mobile Menu Content -->
+  <div id="mobile-menu" class="mobile-menu">
+    <ul class="navbar-links">
+      <li><a href="/UCDFinalProjectRepo/" class="nav-link">Home</a></li>
+      <li><a href="/UCDFinalProjectRepo/about" class="nav-link">About</a></li>
+      <li>
+        <a href="/UCDFinalProjectRepo/projects" class="nav-link">Projects</a>
+      </li>
+      <li>
+        <a href="/UCDFinalProjectRepo/contact" class="nav-link">Contact</a>
+      </li>
+      <li>
+        <a href="/UCDFinalProjectRepo/CV.pdf" class="nav-link" download
+          >My CV</a>
+      </li>
+    </ul>
+
+    <!-- Mode Toggle for Mobile -->
+    <button id="mode-toggle-mobile" class="mode-toggle">🌙</button>
   </div>
 </nav>
 
@@ -248,14 +270,16 @@ const { title, description } = Astro.props;
   // Hamburger Menu Toggle
   const menuToggle = document.getElementById("menu-toggle");
   const navbarLinks = document.querySelector("#navbar-links");
+  const mobileMenu = document.getElementById("mobile-menu");
 
-  if (menuToggle && navbarLinks) {
+  if (menuToggle && navbarLinks && mobileMenu) {
     menuToggle.addEventListener("click", () => {
       navbarLinks.classList.toggle("show");
+      mobileMenu.classList.toggle("show");
     });
   }
 
-  // Day/Night Mode Toggle
+  // Day/Night Mode Toggle for Desktop
   const modeToggle = document.getElementById("mode-toggle");
 
   if (modeToggle) {
@@ -263,6 +287,17 @@ const { title, description } = Astro.props;
       document.body.classList.toggle("dark-mode");
       const icon = document.body.classList.contains("dark-mode") ? "🌞" : "🌙";
       modeToggle.textContent = icon;
+    });
+  }
+
+  // Day/Night Mode Toggle for Mobile
+  const modeToggleMobile = document.getElementById("mode-toggle-mobile");
+
+  if (modeToggleMobile) {
+    modeToggleMobile.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+      const icon = document.body.classList.contains("dark-mode") ? "🌞" : "🌙";
+      modeToggleMobile.textContent = icon;
     });
   }
 </script>

@@ -1,7 +1,3 @@
----
-const { title, description } = Astro.props;
----
-
 <nav class="navbar">
   <div class="container">
     <!-- Left Side: Name & Profile -->
@@ -227,6 +223,11 @@ const { title, description } = Astro.props;
 
     .hero-text p {
       font-size: 1rem;
+    }
+
+    /* Hide the day/night toggle button when the menu is open */
+    .navbar-links.show ~ .mode-toggle {
+      display: none;
     }
   }
 

@@ -3,12 +3,20 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout pageClass="home-page">
+  <!-- Main content injected into Layout here -->
   <div class="hero-content">
     <br />
     <h2>
-      Hi <span id="wave">👋</span>, I'm Brian Cash
+      Hi <span id="wave">👋</span>, I'm <a
+        id="avatar-trigger"
+        href="https://github.com/brash83/"
+        target="_blank"
+        title="View Github Profile"
+        class="text-orange-500 underline"
+      >
+        Brian Cash
+      </a>
     </h2>
-
     <br />
     <p>
       Welcome to my portfolio!
@@ -22,35 +30,8 @@ import Layout from "../layouts/Layout.astro";
       >Learn More About Me</a
     >
   </div>
-  <style>
-    /* Keyframes for the wave animation */
-    @keyframes wave {
-      0% {
-        transform: rotate(0deg); /* Start in normal position */
-      }
-      25% {
-        transform: rotate(-15deg); /* Tilt to the left */
-      }
-      50% {
-        transform: rotate(0deg); /* Return to normal position */
-      }
-      75% {
-        transform: rotate(15deg); /* Tilt to the right */
-      }
-      100% {
-        transform: rotate(0deg); /* Return to normal position */
-      }
-    }
 
-    #wave {
-      display: inline-block !important;
-      animation: wave 2s ease-in-out infinite !important;
-      transform-origin: bottom center !important;
-      font-size: 2.5rem;
-      line-height: 1;
-      margin-bottom: 0.2rem;
-    }
-  </style>
+  <!-- Social Icons Section -->
   <div class="social-icons">
     <a
       href="https://github.com/brash83/"
@@ -65,7 +46,7 @@ import Layout from "../layouts/Layout.astro";
       />
     </a>
     <a
-      href="https://www.linkedin.com/in/brian-cash-1a845153/"
+      href="https://chatgpt.com/c/679b3dc6-7b44-8010-bd49-fd5ed1d49b3b"
       target="_blank"
       aria-label="Visit my LinkedIn profile"
     >

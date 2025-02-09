@@ -4,6 +4,9 @@ const { title, description } = Astro.props;
 
 <nav class="navbar">
   <div class="container">
+    <!-- Mode Toggle Button (Moved to Top Left) -->
+    <button id="mode-toggle" class="mode-toggle">🌙</button>
+
     <!-- Left Side: Name & Profile -->
     <div class="hero-left">
       <div class="profile-photo">
@@ -28,8 +31,6 @@ const { title, description } = Astro.props;
           >
         </li>
       </ul>
-
-      <button id="mode-toggle" class="mode-toggle">🌙</button>
     </div>
 
     <!-- Hamburger Menu (Mobile) -->
@@ -74,6 +75,17 @@ const { title, description } = Astro.props;
     width: 100%;
   }
 
+  /* Mode Toggle Button - Top Left */
+  .mode-toggle {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
   /* Left Side: Profile */
   .hero-left {
     display: flex;
@@ -104,6 +116,7 @@ const { title, description } = Astro.props;
     border-radius: 50%;
   }
 
+  /* Right Side: Nav Links */
   .nav-right {
     display: flex;
     align-items: center;
@@ -125,13 +138,7 @@ const { title, description } = Astro.props;
     font-size: 1rem;
   }
 
-  .mode-toggle {
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-  }
-
+  /* HERO */
   .hero {
     display: flex;
     align-items: center;
@@ -151,96 +158,6 @@ const { title, description } = Astro.props;
 
   .hero-text p {
     font-size: 1.2rem;
-  }
-
-  .hamburger-menu {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    background: none;
-    border: none;
-    z-index: 1001;
-  }
-
-  .hamburger-menu span {
-    width: 30px;
-    height: 3px;
-    background: white;
-    transition: 0.3s;
-  }
-
-  /* MOBILE NAV */
-  @media (max-width: 768px) {
-    .hamburger-menu {
-      display: flex;
-      position: absolute;
-      top: 20px;
-      right: 20px;
-    }
-
-    .navbar-links {
-      position: absolute;
-      top: 60px;
-      right: 0;
-      width: 100%;
-      flex-direction: column;
-      align-items: flex-end;
-      display: none;
-      padding: 15px 0;
-      background: #103b72;
-      backdrop-filter: blur(10px);
-      transition: all 0.3s ease;
-    }
-
-    .navbar-links.show {
-      display: flex;
-      width: 250px;
-    }
-
-    .nav-link {
-      color: white;
-      padding: 10px 0;
-      text-align: right;
-    }
-
-    /* Responsively adjust profile photo and title/description */
-    .hero-left {
-      left: 10%;
-      top: 60%;
-      transform: translateY(-60%);
-    }
-
-    .profile-photo {
-      width: 140px;
-      height: 140px;
-    }
-
-    .profile-photo img {
-      width: 130px;
-      height: 130px;
-    }
-
-    .hero-text h1 {
-      font-size: 1.8rem;
-    }
-
-    .hero-text p {
-      font-size: 1rem;
-    }
-  }
-
-  body.dark-mode {
-    background-color: #121212;
-    color: white;
-  }
-
-  body.dark-mode .navbar {
-    background-color: #333;
-  }
-
-  body.dark-mode .mode-toggle {
-    color: white;
   }
 </style>
 

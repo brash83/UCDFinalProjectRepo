@@ -422,5 +422,9 @@ body.dark-mode .contact-form button {
   text-decoration: underline;
 }
 
+/* Hide the day/night toggle button when the menu is open */
+.navbar-links.show ~ .mode-toggle {
+  display: none;
+}
 
 

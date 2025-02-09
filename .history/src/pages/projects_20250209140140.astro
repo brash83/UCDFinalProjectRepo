@@ -8,99 +8,6 @@ import Layout from "../layouts/Layout.astro";
   gradientColor="linear-gradient(45deg, #BCFFCC, #103B72)"
   pageClass="projects-page"
 >
-  <!-- Style for Red & Green Circles -->
-  <style>
-    .circle {
-      display: inline-block;
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      margin-right: 8px;
-    }
-    .red {
-      background-color: red;
-    }
-    .green {
-      background-color: green;
-    }
-    /* Additional styling for the project navigation buttons */
-    .projects-list {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      margin-bottom: 60px;
-    }
-    .project {
-      font-size: 18px;
-      font-weight: bold;
-    }
-    .project-details {
-      margin-bottom: 500px; /* Increase the margin between projects */
-    }
-    .project-link {
-      color: white;
-      text-decoration: none;
-      padding: 8px 16px;
-      background-color: #3c8d99;
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
-    }
-    .project-link:hover {
-      background-color: #bcffcc;
-      color: white;
-    }
-    /* Popup lightbox */
-    .popup-overlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
-      justify-content: center;
-      align-items: center;
-    }
-    .popup {
-      position: relative;
-      max-width: 90%;
-      max-height: 90%;
-      background: white;
-      padding: 10px;
-    }
-    .popup-image {
-      max-width: 100%;
-      max-height: 80vh; /* Allow image to scale but prevent it from zooming too large */
-      object-fit: contain; /* Keep the aspect ratio */
-    }
-    .project-thumbnail {
-      width: 80px; /* Adjust width to a smaller size */
-      height: auto; /* Maintain aspect ratio */
-      object-fit: contain; /* Keep the image aspect ratio intact */
-      margin: 5px; /* Optional: Adds spacing between images */
-    }
-
-    .project-thumbnail:hover {
-      transform: scale(1.1) translateY(-5px); /* Slight zoom-in and upward movement on hover */
-    }
-
-    .close-btn {
-      position: absolute;
-      top: 5px;
-      right: 5px;
-      background-color: #ff0000;
-      color: white;
-      font-size: 20px;
-      border: none;
-      padding: 5px 10px;
-      border-radius: 50%;
-      cursor: pointer;
-    }
-    .close-btn:hover {
-      background-color: #ff6666;
-    }
-  </style>
-
   <!-- Projects Navigation List (Buttons) -->
   <section class="projects-list">
     <div class="project">
@@ -334,7 +241,7 @@ import Layout from "../layouts/Layout.astro";
 
           if (popupImage && popupOverlay) {
             popupImage.src = this.getAttribute("data-full") as string;
-            popupOverlay.style.display = "flex";
+            popupOverlay.style.display = "flex"; // Show the overlay
           }
         });
       });

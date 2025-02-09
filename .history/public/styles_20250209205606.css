@@ -421,6 +421,13 @@ body.dark-mode .contact-form button {
 .currently-listening a:hover {
   text-decoration: underline;
 }
+#wave {
+  display: inline-block;
+  font-size: 2.5rem;
+  transition: transform 0.3s ease-in-out;
+}
 
-
+#wave:hover {
+  transform: rotate(25deg);
+}
 

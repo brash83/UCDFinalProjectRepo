@@ -422,5 +422,31 @@ body.dark-mode .contact-form button {
   text-decoration: underline;
 }
 
+/* Keyframes for the wave animation */
+@keyframes wave {
+  0% {
+    transform: rotate(0deg); /* Start in normal position */
+  }
+  25% {
+    transform: rotate(-15deg); /* Tilt to the left */
+  }
+  50% {
+    transform: rotate(0deg); /* Return to normal position */
+  }
+  75% {
+    transform: rotate(15deg); /* Tilt to the right */
+  }
+  100% {
+    transform: rotate(0deg); /* Return to normal position */
+  }
+}
 
-
+/* Apply the animation to the emoji */
+#wave {
+  display: inline-block; /* Ensures it behaves like an inline element */
+  animation: wave 2s ease-in-out infinite; /* Apply the wave animation */
+  transform-origin: bottom center; /* Start rotating from the bottom center */
+  font-size: 2.5rem; /* Adjust the font size of the emoji */
+  line-height: 1; /* Ensure no extra space around the emoji */
+  margin-bottom: 0.2rem; /* Small margin to fine-tune the positioning */
+}

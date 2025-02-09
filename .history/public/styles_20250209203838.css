@@ -344,6 +344,36 @@ body.dark-mode .contact-form button {
   gap: 10px; /* Add spacing between thumbnails */
 }
 
+.lightbox {
+  /* You can control the margin for lightbox items here */
+}
+
+/* Add keyframes for the waving animation on the emoji */
+@keyframes wave {
+  0% {
+    transform: rotate(0deg); /* Start in normal position */
+  }
+  25% {
+    transform: rotate(-15deg); /* Slightly tilt to the left */
+  }
+  50% {
+    transform: rotate(0deg); /* Return to normal position */
+  }
+  75% {
+    transform: rotate(15deg); /* Slightly tilt to the right */
+  }
+  100% {
+    transform: rotate(0deg); /* Return to normal position */
+  }
+}
+
+
+#wave {
+  display: inline-block; /* Ensures the span behaves like an inline element */
+  animation: wave 1.5s ease-in-out infinite !important; /* Apply the waving animation */
+  transform-origin: bottom; /* Make it wave from the bottom */
+}
+
 /* Update the projects-list to display the links horizontally */
 .projects-list {
   display: flex;
@@ -421,6 +451,3 @@ body.dark-mode .contact-form button {
 .currently-listening a:hover {
   text-decoration: underline;
 }
-
-
-

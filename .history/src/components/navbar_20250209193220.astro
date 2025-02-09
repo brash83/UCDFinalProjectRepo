@@ -195,13 +195,13 @@ const { title, description } = Astro.props;
 
     .navbar-links.show {
       display: flex;
-      width: 250px;
+      width: 250px; /* Expanded width for the background */
     }
 
     .nav-link {
       color: white;
       padding: 10px 0;
-      text-align: right;
+      text-align: right; /* Aligns text to the right */
     }
 
     /* Responsively adjust profile photo and title/description */
@@ -230,6 +230,7 @@ const { title, description } = Astro.props;
     }
   }
 
+  /* DAY/NIGHT MODE */
   body.dark-mode {
     background-color: #121212;
     color: white;

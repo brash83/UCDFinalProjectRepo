@@ -1,4 +1,4 @@
-
+/* GLOBAL STYLES */
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: 'Fixedsys', monospace; 
+  font-family: 'Fixedsys', monospace; /* Use Fixedsys as primary font, with monospace as fallback */
   line-height: 1.6;
   background-color: #f5f5f5;
   color: #333;
@@ -35,6 +35,7 @@ a {
   text-decoration: none;
 }
 
+/* BUTTONS */
 .cta-button {
   padding: 0.5rem 1rem; 
   background-color: #103B72;
@@ -61,6 +62,8 @@ a {
   margin-top: 20px; 
 }
 
+
+/* HERO SECTION */
 .hero {
   position: relative;
   padding: 30px 0;
@@ -84,7 +87,8 @@ a {
   font-size: 1.25rem;
   margin-top: 1rem;
 }
-
+npm
+/* NAVBAR STYLES */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -104,6 +108,7 @@ a {
   width: 100%;
 }
 
+/* Navbar links */
 .navbar-links {
   display: flex;
   gap: 1.5rem;
@@ -204,7 +209,7 @@ button {
   }
   .contact-form input,
   .contact-form textarea {
-    font-size: 1rem; 
+    font-size: 1rem; /* Ensure inputs are easy to read on smaller screens */
   }
   .contact-form button {
     font-size: 1rem;
@@ -227,12 +232,12 @@ button {
 }
 
 .contact-form {
-  background-color: white; 
+  background-color: white; /* Light background for the form */
   padding: 30px;
-  border-radius: 8px; 
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
-  max-width: 600px; 
-  margin: 0 auto; 
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  max-width: 600px; /* Form width */
+  margin: 0 auto; /* Centers the form */
 }
 
 .contact-form h2 {
@@ -300,6 +305,7 @@ body.dark-mode .cta-button:hover {
   background-color: #420875;
 }
 
+/* Dark Mode for form */
 body.dark-mode .contact-form {
   background-color: #333;
   color: #fff;
@@ -317,11 +323,12 @@ body.dark-mode .contact-form button {
 }
 
 .dark-mode .social-icons img {
-  filter: invert(1); 
+  filter: invert(1); /* Inverts colors, making black -> white */
+}
 
 .project-details ul {
-  list-style-type: disc; 
-  padding-left: 20px; 
+  list-style-type: disc; /* Ensures circular bullet points */
+  padding-left: 20px; /* Adds spacing to align properly */
 }
 
 .project-thumbnail {
@@ -344,12 +351,42 @@ body.dark-mode .contact-form button {
   gap: 10px; /* Add spacing between thumbnails */
 }
 
+.lightbox {
+  /* You can control the margin for lightbox items here */
+}
+
+/* Add keyframes for the waving animation on the emoji */
+@keyframes wave {
+  0% {
+    transform: rotate(0deg); /* Start in normal position */
+  }
+  25% {
+    transform: rotate(-15deg); /* Slightly tilt to the left */
+  }
+  50% {
+    transform: rotate(0deg); /* Return to normal position */
+  }
+  75% {
+    transform: rotate(15deg); /* Slightly tilt to the right */
+  }
+  100% {
+    transform: rotate(0deg); /* Return to normal position */
+  }
+}
+
+/* Apply the animation only to the waving emoji */
+#wave {
+  display: inline-block; /* Ensures the span behaves like an inline element */
+  animation: wave 1.5s ease-in-out infinite; /* Apply the waving animation */
+  transform-origin: bottom; /* Make it wave from the bottom */
+}
+
 /* Update the projects-list to display the links horizontally */
 .projects-list {
   display: flex;
   justify-content: space-between;  /* Distribute the links evenly */
   gap: 1rem; /* Adjust the spacing between the links */
-  margin-bottom: 90px; /* Optional: Adjust bottom margin */
+  margin-bottom: 30px; /* Optional: Adjust bottom margin */
 }
 
 /* Optional: Additional styling for individual project links */
@@ -380,7 +417,7 @@ body.dark-mode .contact-form button {
 }
 
 .project-details {
-  margin-bottom: 30px; /* Increase the margin between projects */
+  margin-bottom: 300px; /* Increase the margin between projects */
 }
 
 
@@ -422,5 +459,48 @@ body.dark-mode .contact-form button {
   text-decoration: underline;
 }
 
+.popup-overlay {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100vw;  /* Ensures it covers the whole viewport */
+  height: 100vh; /* Ensures it covers the whole viewport */
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none; /* Hidden by default */
+  z-index: 9999;  /* Ensure it's on top */
+  align-items: center;
+  justify-content: center;
+}
 
+.popup {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  background-color: white;
+  padding: 20px;
+  overflow: auto;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.popup img {
+  width: 100%;
+  height: auto;
+}
+
+.popup button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+.popup button:hover {
+  color: red; /* Optional: change color on hover */
+}
 
