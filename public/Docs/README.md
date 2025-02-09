@@ -30,6 +30,7 @@ Welcome to my personal portfolio website! This project is a showcase of my skill
 ![About Screenshot](https://raw.githubusercontent.com/brash83/UCDFinalProjectRepo/brian-branch-2/public/images/About.JPG)
 
 ![Mobile](../images/Mobile.JPG)
+Mobile version of the site utilises a hamburger menu and a responsive profie photo
 
 Embedded music
 

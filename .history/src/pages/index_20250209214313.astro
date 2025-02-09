@@ -1,0 +1,97 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout pageClass="home-page">
+  <div class="hero-content">
+    <br />
+    <h2>
+      Hi <span id="wave">👋</span>, I'm Brian Cash
+    </h2>
+
+    <br />
+    <p>
+      Welcome to my portfolio!
+      <br />
+      I've created solutions using a variety of programs, and I'm now learning about
+      front-end development by building this site. Have a look around.
+    </p>
+    <br />
+    <br />
+    <a href="/UCDFinalProjectRepo/about" class="cta-button"
+      >Learn More About Me</a
+    >
+  </div>
+  <style>
+    /* Keyframes for the wave animation */
+    @keyframes wave {
+      0% {
+        transform: rotate(0deg); /* Start in normal position */
+      }
+      25% {
+        transform: rotate(-15deg); /* Tilt to the left */
+      }
+      50% {
+        transform: rotate(0deg); /* Return to normal position */
+      }
+      75% {
+        transform: rotate(15deg); /* Tilt to the right */
+      }
+      100% {
+        transform: rotate(0deg); /* Return to normal position */
+      }
+    }
+
+    #wave {
+      display: inline-block !important;
+      animation: wave 2s ease-in-out infinite !important;
+      transform-origin: bottom center !important;
+      font-size: 2.5rem;
+      line-height: 1;
+      margin-bottom: 0.2rem;
+    }
+  </style>
+  <div class="social-icons">
+    <a
+      href="https://github.com/brash83/"
+      target="_blank"
+      aria-label="Visit my GitHub profile"
+    >
+      <img
+        src="/UCDFinalProjectRepo/icons/github.svg"
+        alt="Github"
+        class="w-8 h-8 text-gray-500 hover:text-gray-700"
+        loading="lazy"
+      />
+    </a>
+    <a
+      href="https://www.linkedin.com/in/brian-cash-1a845153/"
+      target="_blank"
+      aria-label="Visit my LinkedIn profile"
+    >
+      <img
+        src="/UCDFinalProjectRepo/icons/linkedin.svg"
+        alt="LinkedIn"
+        class="w-8 h-8 text-gray-500 hover:text-gray-700"
+        loading="lazy"
+      />
+    </a>
+  </div>
+
+  <!-- Add the JavaScript for the fade effect -->
+  <script type="module" is:inline>
+    document.addEventListener("DOMContentLoaded", function () {
+      const heroSection = document.querySelector(".hero");
+
+      // Handle scroll event
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > 100) {
+          // Adjust scroll threshold as needed
+          heroSection.classList.add("fade-out");
+        } else {
+          heroSection.classList.remove("fade-out");
+        }
+      });
+    });
+  </script>
+</Layout>
