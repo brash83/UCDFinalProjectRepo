@@ -1,0 +1,360 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Projects"
+  description="Check out some of the projects I have worked on."
+  gradientColor="linear-gradient(45deg, #BCFFCC, #103B72)"
+  pageClass="projects-page"
+>
+  <!-- Style for Red & Green Circles -->
+  <style>
+    .circle {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      margin-right: 8px;
+    }
+    .red {
+      background-color: red;
+    }
+    .green {
+      background-color: green;
+    }
+    /* Additional styling for the project navigation buttons */
+    .projects-list {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-bottom: 60px;
+    }
+    .project {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .project-details {
+      margin-bottom: 500px; /* Increase the margin between projects */
+    }
+    .project-link {
+      color: white;
+      text-decoration: none;
+      padding: 8px 16px;
+      background-color: #3c8d99;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    .project-link:hover {
+      background-color: #bcffcc;
+      color: white;
+    }
+    /* Popup lightbox */
+    .popup-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+    }
+    .popup {
+      position: relative;
+      max-width: 90%;
+      max-height: 90%;
+      background: white;
+      padding: 10px;
+    }
+    .popup-image {
+      max-width: 100%;
+      max-height: 80vh; /* Allow image to scale but prevent it from zooming too large */
+      object-fit: contain; /* Keep the aspect ratio */
+    }
+    .project-thumbnail {
+      width: 80px; /* Adjust width to a smaller size */
+      height: auto; /* Maintain aspect ratio */
+      object-fit: contain; /* Keep the image aspect ratio intact */
+      margin: 5px; /* Optional: Adds spacing between images */
+    }
+
+    .project-thumbnail:hover {
+      transform: scale(1.1) translateY(-5px); /* Slight zoom-in and upward movement on hover */
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      background-color: #ff0000;
+      color: white;
+      font-size: 20px;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .close-btn:hover {
+      background-color: #ff6666;
+    }
+  </style>
+
+  <!-- Projects Navigation List (Buttons) -->
+  <section class="projects-list">
+    <div class="project">
+      <a href="#project1" class="project-link">Recce Library App</a>
+    </div>
+    <div class="project">
+      <a href="#project2" class="project-link">Overtime Dashboard</a>
+    </div>
+    <div class="project">
+      <a href="#project3" class="project-link">Vehicle Bookings App</a>
+    </div>
+    <div class="project">
+      <a href="#project4" class="project-link">Operations GDPR Bot</a>
+    </div>
+  </section>
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+
+  <section class="project-details" id="project1">
+    <div class="project-detail-left">
+      <h1 class="project-title">Recce Library App</h1>
+
+      <h2 class="problem-heading">
+        <span class="circle red"></span> Problems
+      </h2>
+      <p>
+        Recces were carried out but not saved, leading to redundant site visits.
+      </p>
+
+      <h2 class="solution-heading">
+        <span class="circle green"></span> Solution (Power Apps)
+      </h2>
+      <ul>
+        <li>
+          <strong>App Creation:</strong> Mobile & desktop app for uniform recce info.
+        </li>
+        <li>
+          <strong>Design:</strong> User-friendly, bilingual (English/Irish).
+        </li>
+        <li>
+          <strong>Database:</strong> Data stored in an in-app gallery & SharePoint.
+        </li>
+      </ul>
+    </div>
+
+    <div class="project-detail-right">
+      <div class="carousel">
+        <img
+          src="/UCDFinalProjectRepo/images/Rec1.jpg"
+          class="project-thumbnail"
+          data-full="/UCDFinalProjectRepo/images/Rec1.jpg"
+        />
+        <img
+          src="/UCDFinalProjectRepo/images/Rec2.jpg"
+          class="project-thumbnail"
+          data-full="/UCDFinalProjectRepo/images/Rec2.jpg"
+        />
+        <img
+          src="/UCDFinalProjectRepo/images/Rec3.jpg"
+          class="project-thumbnail"
+          data-full="/UCDFinalProjectRepo/images/Rec3.jpg"
+        />
+        <img
+          src="/UCDFinalProjectRepo/images/Rec4.jpg"
+          class="project-thumbnail"
+          data-full="/UCDFinalProjectRepo/images/Rec4.jpg"
+        />
+      </div>
+    </div>
+
+    <a href="#top" class="scroll-to-top">&#8593; Back to Top</a>
+  </section>
+
+  <section class="project-details" id="project2">
+    <div class="project-detail-left">
+      <h1 class="project-title">Overtime Dashboard</h1>
+
+      <h2 class="problem-heading">
+        <span class="circle red"></span> Problems
+      </h2>
+      <p>
+        Lack of visibility on overtime trends, reasons, and employee-level
+        reviews.
+      </p>
+
+      <h2 class="solution-heading">
+        <span class="circle green"></span> Solution (Power BI)
+      </h2>
+      <ul>
+        <li>
+          <strong>Tracker Creation:</strong> Excel-based overtime tracker.
+        </li>
+        <li>
+          <strong>Connection:</strong> Integrated into Power BI for accuracy.
+        </li>
+        <li>
+          <strong>Expansion:</strong> Extended to multiple departments in 2022.
+        </li>
+      </ul>
+    </div>
+
+    <div class="project-detail-right">
+      <div class="carousel">
+        <img
+          src="/UCDFinalProjectRepo/images/ot1.jpg"
+          class="project-thumbnail"
+          data-full="/UCDFinalProjectRepo/images/ot1.jpg"
+        />
+        <img
+          src="/UCDFinalProjectRepo/images/ot2.jpg"
+          class="project-thumbnail"
+          data-full="/UCDFinalProjectRepo/images/ot2.jpg"
+        />
+      </div>
+    </div>
+
+    <a href="#top" class="scroll-to-top">&#8593; Back to Top</a>
+  </section>
+
+  <section class="project-details" id="project3">
+    <div class="project-detail-left">
+      <h1 class="project-title">Vehicle Reservations App</h1>
+
+      <h2 class="problem-heading">
+        <span class="circle red"></span> Problems
+      </h2>
+      <p>
+        No system in place to manage vehicle fleet and avoid unnecessary hires.
+      </p>
+
+      <h2 class="solution-heading">
+        <span class="circle green"></span> Solution (Power Apps)
+      </h2>
+      <ul>
+        <li>
+          <strong>App Creation:</strong> Mobile & desktop system for reservations.
+        </li>
+        <li>
+          <strong>Return Centre:</strong> Includes time-stamped photo/video check-in.
+        </li>
+        <li>
+          <strong>Archive:</strong> All bookings & media stored in SharePoint.
+        </li>
+      </ul>
+    </div>
+
+    <div class="project-detail-right">
+      <div class="carousel">
+        <img
+          src="/UCDFinalProjectRepo/images/veh1.jpg"
+          class="project-thumbnail"
+          data-full="/UCDFinalProjectRepo/images/veh1.jpg"
+        />
+        <img
+          src="/UCDFinalProjectRepo/images/veh2.jpg"
+          class="project-thumbnail"
+          data-full="/UCDFinalProjectRepo/images/veh2.jpg"
+        />
+        <img
+          src="/UCDFinalProjectRepo/images/veh3.jpg"
+          class="project-thumbnail"
+          data-full="/UCDFinalProjectRepo/images/veh3.jpg"
+        />
+      </div>
+    </div>
+
+    <a href="#top" class="scroll-to-top">&#8593; Back to Top</a>
+  </section>
+
+  <section class="project-details" id="project4">
+    <div class="project-detail-left">
+      <h1 class="project-title">Operations Bot へ[ ᴼ ▃ ᴼ ]_/¯</h1>
+
+      <h2 class="problem-heading">
+        <span class="circle red"></span> Problems
+      </h2>
+      <p>GDPR compliance lacked a system for tracking necessary actions.</p>
+
+      <h2 class="solution-heading">
+        <span class="circle green"></span> Solution (Power Automate)
+      </h2>
+      <ul>
+        <li>
+          <strong>Automation:</strong> Assigned tasks with scheduled reminders.
+        </li>
+        <li>
+          <strong>Bot Integration:</strong> Messages employees with action items.
+        </li>
+      </ul>
+    </div>
+
+    <div class="project-detail-right">
+      <div class="carousel">
+        <img
+          src="/UCDFinalProjectRepo/images/Bot1.jpg"
+          class="project-thumbnail"
+          data-full="/UCDFinalProjectRepo/images/Bot1.jpg"
+        />
+        <img
+          src="/UCDFinalProjectRepo/images/Bot2.jpg"
+          class="project-thumbnail"
+          data-full="/UCDFinalProjectRepo/images/Bot2.jpg"
+        />
+      </div>
+    </div>
+
+    <a href="#top" class="scroll-to-top">&#8593; Back to Top</a>
+  </section>
+
+  <div id="popupOverlay" class="popup-overlay">
+    <div class="popup">
+      <button class="close-btn">&times;</button>
+      <img id="popupImage" class="popup-image" />
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const images = document.querySelectorAll(".project-thumbnail");
+
+      images.forEach((image) => {
+        image.addEventListener("click", function (this: HTMLImageElement) {
+          const popupImage = document.getElementById(
+            "popupImage"
+          ) as HTMLImageElement | null;
+          const popupOverlay = document.getElementById("popupOverlay");
+
+          if (popupImage && popupOverlay) {
+            popupImage.src = this.getAttribute("data-full") as string;
+            popupOverlay.style.display = "flex";
+          }
+        });
+      });
+
+      const closeButton = document.querySelector(".close-btn");
+      const popupOverlay = document.getElementById("popupOverlay");
+
+      if (closeButton && popupOverlay) {
+        closeButton.addEventListener("click", () => {
+          popupOverlay.style.display = "none";
+        });
+      }
+
+      if (popupOverlay) {
+        popupOverlay.addEventListener("click", (event) => {
+          if (event.target === popupOverlay) {
+            popupOverlay.style.display = "none";
+          }
+        });
+      }
+    });
+  </script>
+</Layout>

@@ -1,0 +1,266 @@
+---
+const { title, description } = Astro.props;
+---
+
+<nav class="navbar">
+  <div class="container">
+    <!-- Left Side: Name & Profile -->
+    <div class="hero-left">
+      <div class="profile-photo">
+        <img src="/images/me.jpg" alt="Profile Photo" />
+      </div>
+    </div>
+
+    <!-- Right Side: Navigation Links -->
+    <div class="nav-right">
+      <ul class="navbar-links" id="navbar-links">
+        <li><a href="/" class="nav-link">Home</a></li>
+        <li><a href="/about" class="nav-link">About</a></li>
+        <li>
+          <a href="/projects" class="nav-link">Projects</a>
+        </li>
+        <li>
+          <a href="/contact" class="nav-link">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a href="/CV.pdf" class="nav-link" download>My CV</a>
+        </li>
+      </ul>
+
+      <button id="mode-toggle" class="mode-toggle">🌙</button>
+    </div>
+
+    <!-- Hamburger Menu (Mobile) -->
+    <button id="menu-toggle" class="hamburger-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1>{title}</h1>
+      <p>{description}</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* NAVBAR */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: transparent;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  /* Left Side: Profile */
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .profile-photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    padding: 4px;
+    margin-top: 250px;
+  }
+
+  .profile-photo img {
+    width: 175px;
+    height: 175px;
+    border-radius: 50%;
+  }
+
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: absolute;
+    right: 5%;
+    top: 15px;
+  }
+
+  .navbar-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+  }
+
+  .nav-link {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+  }
+
+  .mode-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10vh;
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 600px;
+  }
+
+  .hero-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+
+  .hero-text p {
+    font-size: 1.2rem;
+  }
+
+  .hamburger-menu {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    z-index: 1001;
+  }
+
+  .hamburger-menu span {
+    width: 30px;
+    height: 3px;
+    background: white;
+    transition: 0.3s;
+  }
+
+  /* MOBILE NAV */
+  @media (max-width: 768px) {
+    .hamburger-menu {
+      display: flex;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+
+    .navbar-links {
+      position: absolute;
+      top: 60px;
+      right: 0;
+      width: 100%;
+      flex-direction: column;
+      align-items: flex-end;
+      display: none;
+      padding: 15px 0;
+      background: #103b72;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+
+    .navbar-links.show {
+      display: flex;
+      width: 250px;
+    }
+
+    .nav-link {
+      color: white;
+      padding: 10px 0;
+      text-align: right;
+    }
+
+    /* Responsively adjust profile photo and title/description */
+    .hero-left {
+      left: 10%;
+      top: 60%;
+      transform: translateY(-60%);
+    }
+
+    .profile-photo {
+      width: 140px;
+      height: 140px;
+    }
+
+    .profile-photo img {
+      width: 130px;
+      height: 130px;
+    }
+
+    .hero-text h1 {
+      font-size: 1.8rem;
+    }
+
+    .hero-text p {
+      font-size: 1rem;
+    }
+  }
+
+  body.dark-mode {
+    background-color: #121212;
+    color: white;
+  }
+
+  body.dark-mode .navbar {
+    background-color: #333;
+  }
+
+  body.dark-mode .mode-toggle {
+    color: white;
+  }
+</style>
+
+<script>
+  // Hamburger Menu Toggle
+  const menuToggle = document.getElementById("menu-toggle");
+  const navbarLinks = document.querySelector("#navbar-links");
+
+  if (menuToggle && navbarLinks) {
+    menuToggle.addEventListener("click", () => {
+      navbarLinks.classList.toggle("show");
+    });
+  }
+
+  // Day/Night Mode Toggle
+  const modeToggle = document.getElementById("mode-toggle");
+
+  if (modeToggle) {
+    modeToggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+      const icon = document.body.classList.contains("dark-mode") ? "🌞" : "🌙";
+      modeToggle.textContent = icon;
+    });
+  }
+</script>
