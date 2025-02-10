@@ -1,0 +1,426 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Fixedsys', monospace; 
+  line-height: 1.6;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 150px;
+}
+
+h1,
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+p {
+  font-size: 1.125rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.cta-button {
+  padding: 0.5rem 1rem; 
+  background-color: #103B72;
+  color: white;
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 25px; /* More rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: inline-block; 
+  margin: 20px auto;
+  text-align: center;
+  white-space: nowrap; 
+}
+
+.cta-button:hover {
+  background-color: #377bf6;
+}
+
+.cta-button-container {
+  display: flex;
+  justify-content: center; 
+  margin-top: 20px; 
+}
+
+.hero {
+  position: relative;
+  padding: 30px 0;
+  text-align: center; 
+  color: white;
+}
+
+.hero-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center; 
+}
+
+.hero h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center; /* Center align the text */
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin-top: 1rem;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  color: white;
+  position: relative;
+  z-index: 1000;
+  background-color: transparent; 
+  height: 80px; 
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links .nav-link {
+  font-size: 1rem;
+  font-weight: 500;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.navbar-links .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.mode-toggle {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.mode-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+footer p {
+  font-size: 1rem;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.social-icons a img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s;
+}
+
+.social-icons a:hover img {
+  transform: scale(1.1);
+}
+
+button {
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 768px) {
+  /* Navbar on mobile: collapse into vertical stack */
+  .navbar-links {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    display: none;
+  }
+
+  .navbar-toggler {
+    display: block;
+  }
+
+  .navbar-toggler:checked + .navbar-collapse .navbar-links {
+    display: flex;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1.125rem;
+  }
+
+  .contact-form {
+    padding: 20px;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 1rem; 
+  }
+  .contact-form button {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+.contact-form {
+  background-color: white; 
+  padding: 30px;
+  border-radius: 8px; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+  max-width: 600px; 
+  margin: 0 auto; 
+}
+
+.contact-form h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.contact-form label {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+  display: block; /* Ensures labels stack vertically with inputs */
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%; /* Full-width for inputs and textarea */
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  box-sizing: border-box; /* Ensures padding is included in width */
+  resize: vertical; /* Allows textarea to resize vertically */
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none; /* Removes default focus outline */
+  border-color: #ee8230; /* Border color when focused */
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #ee8230;
+  color: white;
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #420875;
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #fff;
+}
+
+body.dark-mode .hero {
+  background-color: #1a1a1a;
+}
+
+body.dark-mode .cta-button {
+  background-color: #377bf6;
+}
+
+body.dark-mode .cta-button:hover {
+  background-color: #420875;
+}
+
+body.dark-mode .contact-form {
+  background-color: #333;
+  color: #fff;
+}
+
+body.dark-mode .contact-form input,
+body.dark-mode .contact-form textarea {
+  background-color: #444;
+  color: #fff;
+  border-color: #666;
+}
+
+body.dark-mode .contact-form button {
+  background-color: #377bf6;
+}
+
+.dark-mode .social-icons img {
+  filter: invert(1); 
+
+.project-details ul {
+  list-style-type: disc; 
+  padding-left: 20px; 
+}
+
+.project-thumbnail {
+  width: 100px; /* Set the size of the thumbnail */
+  height: 100px; /* Set the height of the thumbnail */
+  object-fit: cover; /* Ensure the image fills the space without distorting */
+  border-radius: 10px;
+  cursor: pointer; /* Add pointer cursor to indicate that it's clickable */
+  margin: 5px; /* Add space between thumbnails */
+  transition: transform 0.3s ease; /* Smooth transition effect on hover */
+}
+
+.project-thumbnail:hover {
+  transform: scale(1.1); /* Slightly enlarge the thumbnail on hover */
+}
+
+.lightbox-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Add spacing between thumbnails */
+}
+
+/* Update the projects-list to display the links horizontally */
+.projects-list {
+  display: flex;
+  justify-content: space-between;  /* Distribute the links evenly */
+  gap: 1rem; /* Adjust the spacing between the links */
+  margin-bottom: 90px; /* Optional: Adjust bottom margin */
+}
+
+/* Optional: Additional styling for individual project links */
+.project {
+  flex: 1; /* Make the links flexible in width */
+  text-align: center; /* Ensure the text is centered inside each link */
+}
+
+.project-link {
+  display: inline-block;
+  font-size: 1.125rem;
+  padding: 12px 24px;
+  background-color: #377bf6;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s, transform 0.3s;
+  text-align: center;
+}
+
+.project-link:hover {
+  background-color: #64ea55;
+  transform: translateY(-3px);
+}
+
+.project-link:active {
+  transform: translateY(1px);
+}
+
+.project-details {
+  margin-bottom: 30px; /* Increase the margin between projects */
+}
+
+
+.currently-listening {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.currently-listening img {
+  width: 100px; /* Adjust to your preferred size */
+  height: 100px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.currently-listening {
+  font-size: 1.25rem;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.album-cover {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.currently-listening a {
+  color: #377bf6;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.currently-listening a:hover {
+  text-decoration: underline;
+}
+
+
+
