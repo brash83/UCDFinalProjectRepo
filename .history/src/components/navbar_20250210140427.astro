@@ -87,7 +87,7 @@ const { title, description } = Astro.props;
     align-items: flex-start;
     position: absolute;
     left: 5%;
-    top: 75%; /* Adjusted position further down */
+    top: 50%;
     transform: translateY(-50%);
   }
 
@@ -213,26 +213,23 @@ const { title, description } = Astro.props;
     /* Responsively adjust profile photo and title/description */
     .hero-left {
       left: 10%;
-      top: 75%; /* Further down from the top */
-      transform: translateY(-50%);
-      margin-bottom: 10px; /* Add space below the profile photo */
+      top: 60%;
+      transform: translateY(-60%);
     }
 
     .profile-photo {
-      width: 120px; /* Reduced width for mobile */
-      height: 120px; /* Reduced height for mobile */
-      padding: 1px; /* Reduced padding for the white border to scale down */
-      margin-top: 0; /* Remove margin-top on mobile */
+      width: 140px;
+      height: 140px;
+      padding: 2px; /* Reduce white border size on mobile */
     }
 
     .profile-photo img {
-      width: 100%; /* Adjust image size to fit the smaller profile photo */
-      height: 100%; /* Make sure image fills the container */
+      width: 60%;
+      height: 60%;
     }
 
     .hero-text h1 {
       font-size: 1.8rem;
-      margin-top: 30px; /* Add margin to the title to avoid overlap */
     }
 
     .hero-text p {

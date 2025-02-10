@@ -87,26 +87,25 @@ const { title, description } = Astro.props;
     align-items: flex-start;
     position: absolute;
     left: 5%;
-    top: 75%; /* Adjusted position further down */
+    top: 40%; /* Adjusted to position profile photo higher */
     transform: translateY(-50%);
   }
 
   .profile-photo {
-    width: 180px;
-    height: 180px;
+    width: 100px; /* Smaller size for mobile */
+    height: 100px; /* Smaller size for mobile */
     border-radius: 50%;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
     background: white;
-    padding: 4px; /* White border */
-    margin-top: 250px;
+    padding: 2px; /* Smaller white border on mobile */
   }
 
   .profile-photo img {
-    width: 175px;
-    height: 175px;
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
   }
 
@@ -213,26 +212,25 @@ const { title, description } = Astro.props;
     /* Responsively adjust profile photo and title/description */
     .hero-left {
       left: 10%;
-      top: 75%; /* Further down from the top */
+      top: 40%; /* Adjust profile photo higher up in the navbar */
       transform: translateY(-50%);
-      margin-bottom: 10px; /* Add space below the profile photo */
+      margin-bottom: 10px; /* Space below the profile photo */
     }
 
     .profile-photo {
-      width: 120px; /* Reduced width for mobile */
-      height: 120px; /* Reduced height for mobile */
-      padding: 1px; /* Reduced padding for the white border to scale down */
-      margin-top: 0; /* Remove margin-top on mobile */
+      width: 80px; /* Even smaller size for mobile */
+      height: 80px; /* Even smaller size for mobile */
+      padding: 1px; /* Further reduced border size */
     }
 
     .profile-photo img {
-      width: 100%; /* Adjust image size to fit the smaller profile photo */
-      height: 100%; /* Make sure image fills the container */
+      width: 100%;
+      height: 100%;
     }
 
     .hero-text h1 {
       font-size: 1.8rem;
-      margin-top: 30px; /* Add margin to the title to avoid overlap */
+      margin-top: 30px; /* Additional margin between profile and text */
     }
 
     .hero-text p {
@@ -241,24 +239,20 @@ const { title, description } = Astro.props;
 
     /* Mobile adjustments */
     .nav-right {
-      gap: 30px; /* Add some gap on mobile view */
+      gap: 30px; /* Adjust gap on mobile */
     }
 
     .mode-toggle {
-      font-size: 1.8rem; /* Make sure the mode toggle button isn't too large */
+      font-size: 1.8rem;
     }
 
     .hamburger-menu {
-      font-size: 1.8rem; /* Adjust if needed */
+      font-size: 1.8rem;
     }
 
     /* Adjust spacing for better visibility */
-    .hero-left {
-      margin-bottom: 20px; /* Add space below the profile photo */
-    }
-
     .hero-text {
-      margin-top: 100px; /* Add more space between the hero text and profile photo */
+      margin-top: 100px; /* Ensure good separation between hero text and profile photo */
     }
 
     /* Hide the day/night toggle when the hamburger menu is visible */

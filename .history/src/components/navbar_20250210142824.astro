@@ -87,7 +87,7 @@ const { title, description } = Astro.props;
     align-items: flex-start;
     position: absolute;
     left: 5%;
-    top: 75%; /* Adjusted position further down */
+    top: 50%;
     transform: translateY(-50%);
   }
 
@@ -213,8 +213,8 @@ const { title, description } = Astro.props;
     /* Responsively adjust profile photo and title/description */
     .hero-left {
       left: 10%;
-      top: 75%; /* Further down from the top */
-      transform: translateY(-50%);
+      top: 75%; /* Lowered profile photo further */
+      transform: translateY(-75%); /* More room for the profile photo */
       margin-bottom: 10px; /* Add space below the profile photo */
     }
 

@@ -29,13 +29,9 @@ const { title, description } = Astro.props;
         </li>
       </ul>
 
-      <button
-        id="mode-toggle"
-        class="mode-toggle"
-        aria-label="Toggle dark mode"
+      <button id="mode-toggle" class="mode-toggle" aria-label="Toggle dark mode"
+        >🌙</button
       >
-        🌙
-      </button>
     </div>
 
     <!-- Hamburger Menu (Mobile) -->
@@ -87,7 +83,7 @@ const { title, description } = Astro.props;
     align-items: flex-start;
     position: absolute;
     left: 5%;
-    top: 75%; /* Adjusted position further down */
+    top: 50%;
     transform: translateY(-50%);
   }
 
@@ -100,7 +96,7 @@ const { title, description } = Astro.props;
     align-items: center;
     justify-content: center;
     background: white;
-    padding: 4px; /* White border */
+    padding: 4px;
     margin-top: 250px;
   }
 
@@ -213,26 +209,22 @@ const { title, description } = Astro.props;
     /* Responsively adjust profile photo and title/description */
     .hero-left {
       left: 10%;
-      top: 75%; /* Further down from the top */
-      transform: translateY(-50%);
-      margin-bottom: 10px; /* Add space below the profile photo */
+      top: 60%;
+      transform: translateY(-60%);
     }
 
     .profile-photo {
-      width: 120px; /* Reduced width for mobile */
-      height: 120px; /* Reduced height for mobile */
-      padding: 1px; /* Reduced padding for the white border to scale down */
-      margin-top: 0; /* Remove margin-top on mobile */
+      width: 140px;
+      height: 140px;
     }
 
     .profile-photo img {
-      width: 100%; /* Adjust image size to fit the smaller profile photo */
-      height: 100%; /* Make sure image fills the container */
+      width: 60%;
+      height: 60%;
     }
 
     .hero-text h1 {
       font-size: 1.8rem;
-      margin-top: 30px; /* Add margin to the title to avoid overlap */
     }
 
     .hero-text p {
@@ -260,11 +252,6 @@ const { title, description } = Astro.props;
     .hero-text {
       margin-top: 100px; /* Add more space between the hero text and profile photo */
     }
-
-    /* Hide the day/night toggle when the hamburger menu is visible */
-    .navbar .mode-toggle {
-      display: none;
-    }
   }
 
   body.dark-mode {
@@ -289,10 +276,6 @@ const { title, description } = Astro.props;
   if (menuToggle && navbarLinks) {
     menuToggle.addEventListener("click", () => {
       navbarLinks.classList.toggle("show");
-      // Hide the hamburger menu when the menu is shown
-      menuToggle.style.display = navbarLinks.classList.contains("show")
-        ? "none"
-        : "flex";
     });
   }
 
