@@ -5,5 +5,5 @@ export default defineConfig({
   build: {
     outDir: 'dist',  // ✅ Keep output in 'dist/' instead of 'docs/'
   },
-  base: '/UCDFinalProjectRepo/',
+  base: '/', // Set base path to root for Vercel (remove /UCDFinalProjectRepo/)
 });
