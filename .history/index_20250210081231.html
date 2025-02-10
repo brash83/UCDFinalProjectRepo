@@ -1,0 +1,22 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Welcome to my portfolio"><title>My Portfolio</title><link rel="stylesheet" href="/UCDFinalProjectRepo/styles.css"><script type="module" src="/UCDFinalProjectRepo/_astro/hoisted.C1f23mn1.js"></script></head> <body class="home-page"> <!-- Hero Section with Navbar inside --> <section class="hero" style="background: linear-gradient(45deg, #EAf165, #103B72);"> <nav class="navbar"> <div class="container"> <div class="navbar-brand-container"> <a class="navbar-brand" href="/">Brian Cash</a> <div class="profile-photo"> <img src="/UCDFinalProjectRepo/images/me.jpg" alt="Profile Photo"> </div> </div> <ul class="navbar-links"> <li><a href="/UCDFinalProjectRepo/" class="nav-link">Home</a></li> <li><a href="/UCDFinalProjectRepo/about" class="nav-link">About</a></li> <li> <a href="/UCDFinalProjectRepo/projects" class="nav-link">Projects</a> </li> <li> <a href="/UCDFinalProjectRepo/contact" class="nav-link">Contact</a> </li> <li class="nav-item"> <a href="/UCDFinalProjectRepo/CV.pdf" class="nav-link" download>My CV</a> </li> </ul> <button id="mode-toggle" class="mode-toggle">🌙</button> </div> </nav> <div class="hero-content"> <h1>Welcome!</h1> <p>Explore my world of creativity and code.</p> </div> </section> <main> <div class="content-container">   <div class="hero-content"> <br> <h2>
+Hi <span id="wave">👋</span>, I'm <a id="avatar-trigger" href="https://github.com/brash83/" target="_blank" title="View Github Profile" class="text-orange-500 underline">
+Brian
+</a> </h2> <br> <p>
+Welcome to my portfolio! I've created solutions using a variety of
+      programs, and I'm now learning about front-end development by building
+      this site. Have a look around.
+</p> <br> <a href="/about" class="cta-button">Learn More About Me</a> </div>  <div class="social-icons"> <a href="https://github.com/brash83/" target="_blank" aria-label="Visit my GitHub profile"> <img src="/UCDFinalProjectRepo/icons/github.svg" alt="Github" class="w-8 h-8 text-gray-500 hover:text-gray-700" loading="lazy"> </a> <a href="https://www.linkedin.com/in/brash83/" target="_blank" aria-label="Visit my LinkedIn profile"> <img src="/UCDFinalProjectRepo/icons/linkedin.svg" alt="LinkedIn" class="w-8 h-8 text-gray-500 hover:text-gray-700" loading="lazy"> </a> </div>  <script type="module">
+    document.addEventListener("DOMContentLoaded", function () {
+      const heroSection = document.querySelector(".hero");
+
+      // Handle scroll event
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > 100) {
+          // Adjust scroll threshold as needed
+          heroSection.classList.add("fade-out");
+        } else {
+          heroSection.classList.remove("fade-out");
+        }
+      });
+    });
+  </script>  </div> </main> <footer> <div class="content-container"> <p>&copy; 2025 Brian Cash. All rights reserved.</p> </div> </footer>  </body> </html>
